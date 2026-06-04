@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sheikh Tanzid Ahmed Sadi | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Sheikh Tanzid Ahmed Sadi | Animated Portfolio</title>
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     }
 
     html {
@@ -18,65 +18,217 @@
 
     body {
       background: #f4f6f8;
-      color: #333;
+      color: #1e293b;
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
+    /* ========== HEADER (sticky) ========== */
     header {
-      background: #1f2937;
+      background: #0f172a;
       color: white;
-      padding: 20px 60px;
+      padding: 18px 60px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       position: sticky;
       top: 0;
       z-index: 1000;
+      backdrop-filter: blur(2px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     }
 
     header h1 {
       font-size: 24px;
       letter-spacing: 0.5px;
+      font-weight: 600;
+      background: linear-gradient(135deg, #e2e8f0, #14b8a6);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
 
     nav a {
-      color: white;
+      color: #f1f5f9;
       text-decoration: none;
-      margin-left: 18px;
-      font-weight: bold;
+      margin-left: 22px;
+      font-weight: 600;
       font-size: 15px;
-      transition: color 0.3s ease;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: #14b8a6;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
     }
 
     nav a:hover {
       color: #14b8a6;
     }
 
+    /* ========== HERO SECTION — ANIMATION HUB ========== */
     .hero {
-      min-height: 88vh;
+      min-height: 92vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       padding: 50px 25px;
-      background: linear-gradient(to right, #1f2937, #0f766e);
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(125deg, #0b1120, #115e59, #134e4a);
+      background-size: 300% 300%;
+      animation: gradientWave 14s ease infinite alternate;
       color: white;
+      isolation: isolate;
+    }
+
+    /* Animated gradient background */
+    @keyframes gradientWave {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /* Floating abstract shapes for extra motion */
+    .hero::before,
+    .hero::after {
+      content: '';
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, rgba(20,184,166,0.2) 0%, rgba(20,184,166,0) 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+      animation: floatShape 18s infinite alternate ease-in-out;
+    }
+
+    .hero::before {
+      top: -70px;
+      left: -60px;
+      animation-duration: 22s;
+    }
+
+    .hero::after {
+      bottom: -80px;
+      right: -50px;
+      background: radial-gradient(circle, rgba(255,255,245,0.15) 0%, rgba(255,255,245,0) 70%);
+      animation-duration: 19s;
+      animation-delay: -2s;
+    }
+
+    @keyframes floatShape {
+      0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.4;
+      }
+      100% {
+        transform: translate(40px, -30px) scale(1.2);
+        opacity: 0.7;
+      }
+    }
+
+    /* Additional floating micro-particles via pseudo */
+    .hero .bg-particle {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: #2dd4bf;
+      border-radius: 50%;
+      opacity: 0.3;
+      animation: particleDrift 12s infinite linear;
+      pointer-events: none;
+    }
+
+    @keyframes particleDrift {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+      }
+      20% {
+        opacity: 0.6;
+      }
+      80% {
+        opacity: 0.5;
+      }
+      100% {
+        transform: translateY(-90px) translateX(30px) rotate(120deg);
+        opacity: 0;
+      }
     }
 
     .hero-content {
-      max-width: 850px;
-      animation: fadeInUp 1s ease;
+      max-width: 880px;
+      position: relative;
+      z-index: 3;
+      animation: heroGlowRise 1s cubic-bezier(0.2, 0.9, 0.3, 1.1);
     }
 
+    @keyframes heroGlowRise {
+      0% {
+        opacity: 0;
+        transform: translateY(45px) scale(0.96);
+        filter: blur(4px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+      }
+    }
+
+    /* profile image enhanced animation + glow pulse */
     .profile-img {
-      width: 140px;
-      height: 140px;
+      width: 150px;
+      height: 150px;
       margin: 0 auto 25px;
       border-radius: 50%;
       overflow: hidden;
-      border: 5px solid #14b8a6;
-      background: white;
-      animation: float 3s ease-in-out infinite;
+      border: 4px solid #2dd4bf;
+      background: #0f172a;
+      box-shadow: 0 0 0 0 rgba(45, 212, 191, 0.5);
+      animation: floatProfile 3.5s ease-in-out infinite, borderGlowPulse 2.2s infinite alternate;
+    }
+
+    @keyframes floatProfile {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-8px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    @keyframes borderGlowPulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(45, 212, 191, 0.5), 0 10px 20px rgba(0,0,0,0.2);
+        border-color: #2dd4bf;
+      }
+      100% {
+        box-shadow: 0 0 0 8px rgba(45, 212, 191, 0.2), 0 15px 30px rgba(0,0,0,0.3);
+        border-color: #f0fdfa;
+      }
     }
 
     .profile-img img {
@@ -84,47 +236,114 @@
       height: 100%;
       display: block;
       object-fit: cover;
+      transition: transform 0.4s ease;
     }
 
+    .profile-img:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Animated name text-shadow + gradient */
     .hero h2 {
-      font-size: 46px;
+      font-size: 52px;
       margin-bottom: 12px;
+      font-weight: 700;
+      background: linear-gradient(to right, #ffffff, #a5f3fc, #99f6e4);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: textGlowPulse 3s infinite alternate;
+      letter-spacing: -0.3px;
     }
 
+    @keyframes textGlowPulse {
+      0% {
+        text-shadow: 0 0 0px rgba(165, 243, 252, 0);
+      }
+      100% {
+        text-shadow: 0 0 12px rgba(20, 184, 166, 0.5);
+      }
+    }
+
+    /* animated underline effect on subtitle container */
     .hero .subtitle {
-      font-size: 21px;
-      margin-bottom: 15px;
-      font-weight: bold;
+      font-size: 22px;
+      margin-bottom: 16px;
+      font-weight: 600;
+      display: inline-block;
+      background: rgba(15, 23, 42, 0.5);
+      backdrop-filter: blur(6px);
+      padding: 6px 20px;
+      border-radius: 60px;
+      letter-spacing: 0.3px;
+      animation: subtitleWave 2s infinite alternate;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    @keyframes subtitleWave {
+      0% {
+        transform: scale(1);
+        background: rgba(15, 23, 42, 0.4);
+      }
+      100% {
+        transform: scale(1.02);
+        background: rgba(20, 184, 166, 0.2);
+        box-shadow: 0 4px 14px rgba(20,184,166,0.3);
+      }
     }
 
     .hero .summary {
       font-size: 18px;
       max-width: 720px;
-      margin: 0 auto 28px;
+      margin: 15px auto 28px;
+      font-weight: 400;
+      backdrop-filter: blur(2px);
     }
 
+    /* animated button with ripple */
     .hero-buttons {
       display: flex;
       justify-content: center;
-      gap: 15px;
+      gap: 20px;
       flex-wrap: wrap;
     }
 
     .btn {
       display: inline-block;
-      padding: 12px 25px;
+      padding: 12px 28px;
       background: white;
-      color: #1f2937;
+      color: #0f172a;
       text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-      transition: all 0.3s ease;
+      border-radius: 40px;
+      font-weight: 700;
+      transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      background: #14b8a6;
+      z-index: -1;
+      transition: width 0.4s ease;
+      border-radius: 40px;
+    }
+
+    .btn:hover::before {
+      width: 100%;
     }
 
     .btn:hover {
-      background: #111827;
       color: white;
       transform: translateY(-3px);
+      box-shadow: 0 10px 22px rgba(0,0,0,0.2);
     }
 
     .btn-outline {
@@ -133,40 +352,77 @@
       border: 2px solid white;
     }
 
-    .btn-outline:hover {
+    .btn-outline::before {
       background: white;
-      color: #1f2937;
-      transform: translateY(-3px);
     }
 
-    /* YouTube button style */
+    .btn-outline:hover {
+      color: #0f172a;
+    }
+
+    /* YouTube button style animation */
     .youtube-btn {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
       background: #ff0000;
       color: white;
-      padding: 8px 18px;
-      border-radius: 30px;
+      padding: 8px 20px;
+      border-radius: 40px;
       text-decoration: none;
       font-weight: bold;
-      margin-top: 15px;
-      transition: background 0.3s, transform 0.2s;
-    }
-    .youtube-btn:hover {
-      background: #cc0000;
-      transform: translateY(-2px);
+      transition: all 0.25s;
+      margin-top: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      animation: softPulseRed 1.8s infinite;
     }
 
+    @keyframes softPulseRed {
+      0% {
+        box-shadow: 0 0 0 0 rgba(255,0,0,0.4);
+      }
+      70% {
+        box-shadow: 0 0 0 10px rgba(255,0,0,0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(255,0,0,0);
+      }
+    }
+
+    .youtube-btn:hover {
+      background: #cc0000;
+      transform: scale(1.02);
+      animation: none;
+    }
+
+    /* general sections */
     section {
       padding: 70px 80px;
     }
 
     section h2 {
       text-align: center;
-      margin-bottom: 30px;
-      font-size: 32px;
-      color: #1f2937;
+      margin-bottom: 40px;
+      font-size: 34px;
+      color: #0f172a;
+      position: relative;
+      display: inline-block;
+      width: 100%;
+    }
+
+    section h2:after {
+      content: '';
+      width: 70px;
+      height: 4px;
+      background: #14b8a6;
+      display: block;
+      margin: 12px auto 0;
+      border-radius: 4px;
+      transition: width 0.3s;
+    }
+
+    section h2:hover:after {
+      width: 120px;
     }
 
     .card {
@@ -176,407 +432,319 @@
       font-size: 18px;
       background: white;
       padding: 32px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+      border-radius: 28px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.14);
-    }
-
-    .card h3 {
-      color: #0f766e;
-      margin-bottom: 10px;
-      font-size: 24px;
+      transform: translateY(-8px);
+      box-shadow: 0 20px 32px rgba(0, 0, 0, 0.12);
     }
 
     .education-info p {
-      margin: 8px 0;
+      margin: 10px 0;
     }
 
     .skill-container {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 30px;
     }
 
     .skill-box {
       background: white;
-      padding: 28px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+      padding: 32px 20px;
+      border-radius: 28px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
       text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: all 0.3s ease;
     }
 
     .skill-box:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.14);
-    }
-
-    .skill-box h3 {
-      color: #0f766e;
-      margin-bottom: 12px;
-      font-size: 22px;
-    }
-
-    .skill-box p {
-      font-size: 17px;
+      transform: translateY(-8px);
+      background: linear-gradient(145deg, #fff, #f8fafc);
+      box-shadow: 0 18px 28px rgba(20, 184, 166, 0.12);
+      border-bottom: 3px solid #14b8a6;
     }
 
     .projects {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 30px;
     }
 
     .project-card {
       background: white;
       padding: 28px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.09);
-      position: relative;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 28px;
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s;
       display: flex;
       flex-direction: column;
     }
 
     .project-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
-    }
-
-    .project-card h3 {
-      margin-bottom: 12px;
-      color: #0f766e;
-      font-size: 24px;
-      text-align: center;
-    }
-
-    .project-card p {
-      margin-bottom: 10px;
-      text-align: justify;
-    }
-
-    .project-card ul {
-      margin-left: 20px;
-      margin-top: 10px;
-    }
-
-    .project-card li {
-      margin-bottom: 8px;
+      transform: translateY(-10px);
+      box-shadow: 0 24px 40px rgba(0, 0, 0, 0.12);
     }
 
     .featured {
-      border-top: 6px solid #0f766e;
+      border-left: 6px solid #14b8a6;
+      background: linear-gradient(105deg, #ffffff, #fafffe);
     }
 
     .tag {
-      display: inline-block;
       background: #0f766e;
       color: white;
-      padding: 7px 14px;
-      border-radius: 20px;
-      font-size: 14px;
+      padding: 6px 16px;
+      border-radius: 30px;
+      font-size: 13px;
       font-weight: bold;
+      align-self: flex-start;
       margin-bottom: 15px;
     }
 
     .contact {
-      max-width: 650px;
+      max-width: 680px;
       margin: auto;
-      text-align: center;
       background: white;
-      padding: 35px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .contact:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.14);
-    }
-
-    .contact p {
-      margin: 12px 0;
-      font-size: 18px;
+      padding: 40px;
+      border-radius: 32px;
+      transition: 0.3s;
+      text-align: center;
     }
 
     .contact a {
       color: #0f766e;
-      text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
+      transition: 0.2s;
     }
 
     .contact a:hover {
       text-decoration: underline;
+      color: #0f3a36;
     }
 
     footer {
-      background: #1f2937;
-      color: white;
+      background: #0f172a;
+      color: #cbd5e1;
       text-align: center;
-      padding: 20px;
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes float {
-      0% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-10px);
-      }
-      100% {
-        transform: translateY(0);
-      }
+      padding: 24px;
+      font-size: 14px;
     }
 
     @media (max-width: 768px) {
       header {
         flex-direction: column;
-        padding: 20px;
+        padding: 16px 20px;
       }
       nav {
-        margin-top: 10px;
-        text-align: center;
+        margin-top: 12px;
       }
       nav a {
-        margin: 0 8px;
-        display: inline-block;
-        margin-top: 8px;
+        margin: 0 10px;
       }
       .hero h2 {
-        font-size: 34px;
+        font-size: 36px;
       }
       .hero .subtitle {
         font-size: 18px;
       }
-      .hero .summary {
-        font-size: 16px;
-      }
       section {
-        padding: 45px 25px;
+        padding: 45px 20px;
       }
       .profile-img {
-        width: 110px;
-        height: 110px;
+        width: 120px;
+        height: 120px;
       }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Sheikh Tanzid Ahmed Sadi</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#objective">Objective</a>
-      <a href="#education">Education</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<header>
+  <h1>Sheikh Tanzid Ahmed Sadi</h1>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#objective">Objective</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-  <section class="hero">
-    <div class="hero-content">
-      <div class="profile-img">
-        <!-- ✅ IMGUR DIRECT LINK (works on any device) -->
-        <img src="https://i.imgur.com/gR7Kagi.jpeg"
-             alt="Sheikh Tanzid Ahmed Sadi"
-             onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?background=14b8a6&color=fff&name=Sheikh+Tanzid&length=2&bold=true&size=140';">
-      </div>
-      <h2><b>Sheikh Tanzid Ahmed Sadi</b></h2>
-      <p class="subtitle">
-        Computer Science & Engineering Student | Programmer | Game Developer
-      </p>
-      <p class="summary">
-        Passionate about software development, object-oriented programming,
-        problem solving, and 2D game development.
-      </p>
-      <div class="hero-buttons">
-        <a href="#projects" class="btn">View Projects</a>
-        <a href="#contact" class="btn btn-outline">Contact Me</a>
-      </div>
+<!-- HERO SECTION WITH RICH ANIMATIONS (gradient, floating particles, glow, pulse) -->
+<section class="hero">
+  <!-- add dynamic floating particles via javascript (CSS only also but small extra dynamic) -->
+  <div class="hero-content">
+    <div class="profile-img">
+      <img src="https://i.imgur.com/gR7Kagi.jpeg"
+           alt="Sheikh Tanzid Ahmed Sadi"
+           onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?background=14b8a6&color=fff&name=Sheikh+Tanzid&length=2&bold=true&size=140';">
     </div>
-  </section>
+    <h2><b>Sheikh Tanzid Ahmed Sadi</b></h2>
+    <p class="subtitle">
+      Computer Science & Engineering Student | Programmer | Game Developer
+    </p>
+    <p class="summary">
+      Passionate about software development, object-oriented programming,
+      problem solving, and 2D game creation. Constantly evolving through real projects.
+    </p>
+    <div class="hero-buttons">
+      <a href="#projects" class="btn">Explore Work</a>
+      <a href="#contact" class="btn btn-outline">Contact Me</a>
+    </div>
+    <!-- extra animated element: tiny interactive + youtube inline not needed here (inside project) -->
+  </div>
+</section>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <div class="card">
+<section id="about">
+  <h2>About Me</h2>
+  <div class="card">
+    <p>
+      I am Sheikh Tanzid Ahmed Sadi, a Computer Science and Engineering student at
+      Ahsanullah University of Science and Technology. Currently in the 3rd semester (2nd year 1st semester).
+      I thrive on programming, OOP paradigms, algorithmic challenges, and game development.
+      I love merging creativity with logic to build functional and fun experiences.
+    </p>
+  </div>
+</section>
+
+<section id="objective">
+  <h2>Career Objective</h2>
+  <div class="card">
+    <p>
+      To become a versatile software engineer who designs impactful solutions. I aim
+      to strengthen my expertise in software architecture, game mechanics, and full-stack
+      development while contributing to meaningful tech innovations.
+    </p>
+  </div>
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  <div class="card education-info">
+    <h3>Ahsanullah University of Science and Technology</h3>
+    <p><strong>Degree:</strong> B.Sc. in Computer Science and Engineering</p>
+    <p><strong>Current Semester:</strong> 3rd Semester / 2nd Year 1st Semester</p>
+    <p><strong>Location:</strong> Dhaka, Bangladesh</p>
+  </div>
+  <br>
+  <div class="card education-info">
+    <h3>Birshreshtha Noor Mohammad Public College</h3>
+    <p><strong>Exam:</strong> Higher Secondary Certificate (HSC)</p>
+    <p><strong>Result:</strong> GPA 5.00</p>
+  </div>
+  <br>
+  <div class="card education-info">
+    <h3>Armanitola Government High School</h3>
+    <p><strong>Exam:</strong> Secondary School Certificate (SSC)</p>
+    <p><strong>Result:</strong> GPA 5.00</p>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Technical Skills</h2>
+  <div class="skill-container">
+    <div class="skill-box">
+      <h3>Languages</h3>
+      <p>C, C++, Java (OOP), HTML/CSS</p>
+    </div>
+    <div class="skill-box">
+      <h3>Core Concepts</h3>
+      <p>Object-Oriented Design, Problem Solving, Data Structures Basics</p>
+    </div>
+    <div class="skill-box">
+      <h3>Tools & Libraries</h3>
+      <p>iGraphics, Visual Studio, VS Code, Git basics</p>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Featured Projects</h2>
+  <div class="projects">
+    <div class="project-card featured">
+      <span class="tag">Main Project</span>
+      <h3>MetaShift</h3>
       <p>
-        I am Sheikh Tanzid Ahmed Sadi, a Computer Science and Engineering student at
-        Ahsanullah University of Science and Technology. I am currently studying in
-        the 3rd semester, also known as 2nd year 1st semester. I am interested in
-        programming, object-oriented programming, problem solving, and game development.
-        I enjoy learning new technologies and applying my knowledge through practical
-        academic and personal projects.
+        MetaShift is a 2D arcade-style side-scrolling action game developed using iGraphics
+        library in C. It features vehicle evolution, terrain adaptation, and resource management.
       </p>
-    </div>
-  </section>
-
-  <section id="objective">
-    <h2>Career Objective</h2>
-    <div class="card">
-      <p>
-        My goal is to build a strong foundation in computer science and become a skilled
-        software developer. I am focused on improving my programming, problem-solving,
-        object-oriented design, and project development skills through continuous learning
-        and hands-on practice.
-      </p>
-    </div>
-  </section>
-
-  <section id="education">
-    <h2>Education</h2>
-    <div class="card education-info">
-      <h3>Ahsanullah University of Science and Technology</h3>
-      <p><strong>Degree:</strong> B.Sc. in Computer Science and Engineering</p>
-      <p><strong>Current Semester:</strong> 3rd Semester / 2nd Year 1st Semester</p>
-      <p><strong>Location:</strong> Dhaka, Bangladesh</p>
-    </div>
-    <br>
-    <div class="card education-info">
-      <h3>Birshreshtha Noor Mohammad Public College</h3>
-      <p><strong>Exam:</strong> Higher Secondary Certificate (HSC)</p>
-      <p><strong>Result:</strong> GPA 5.00</p>
-    </div>
-    <br>
-    <div class="card education-info">
-      <h3>Armanitola Government High School</h3>
-      <p><strong>Exam:</strong> Secondary School Certificate (SSC)</p>
-      <p><strong>Result:</strong> GPA 5.00</p>
-    </div>
-  </section>
-
-  <section id="skills">
-    <h2>Technical Skills</h2>
-    <div class="skill-container">
-      <div class="skill-box">
-        <h3>Programming Languages</h3>
-        <p>C, C++, Java</p>
-      </div>
-      <div class="skill-box">
-        <h3>Core Concepts</h3>
-        <p>Object-Oriented Programming, Problem Solving, Basic Algorithms</p>
-      </div>
-      <div class="skill-box">
-        <h3>Tools & Technologies</h3>
-        <p>iGraphics, Visual Studio 2013, HTML, CSS</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="projects">
-      <div class="project-card featured">
-        <span class="tag">Featured Project</span>
-        <h3>MetaShift</h3>
-        <p>
-          MetaShift is a 2D arcade-style side-scrolling action game developed using
-          the iGraphics library in C. The game focuses on vehicle evolution,
-          terrain-based movement, and strategic resource management.
-        </p>
-        <p>
-          Players need to balance coins and fuel to progress through different levels.
-          The game includes shooting mechanics, enemy challenges, and final transformation
-          into a combat mech.
-        </p>
-        <p><strong>Role:</strong> Developer</p>
-        <p><strong>Genre:</strong> 2D Arcade Action</p>
-        <p><strong>Key Focus:</strong> Game logic, resource management, level progression</p>
-        <p><strong>Language:</strong> C, C++</p>
-        <p><strong>Library:</strong> iGraphics</p>
-        <p><strong>IDE:</strong> Visual Studio 2013</p>
-        <p><strong>Platform:</strong> Windows PC</p>
-        <ul>
-          <li>Four level-based progression system with increasing difficulty.</li>
-          <li>Vehicle evolution system with new abilities in each level.</li>
-          <li>Different enemy types requiring different combat methods.</li>
-          <li>Coin and fuel-based resource management system.</li>
-          <li>Shooting mechanics and final combat transformation.</li>
-        </ul>
-        <!-- ✅ YOUTUBE LINK ADDED HERE -->
-        <div style="text-align: center; margin-top: 20px;">
-          <a href="https://youtu.be/TsepZPAhvNM" target="_blank" rel="noopener noreferrer" class="youtube-btn">
-            ▶ Watch Gameplay on YouTube
-          </a>
-        </div>
-        <!-- Replace the link above with your actual YouTube URL -->
-      </div>
-
-      <div class="project-card">
-        <h3>Personal Portfolio Website</h3>
-        <p>
-          A responsive personal portfolio website designed using HTML and CSS to present
-          my academic background, technical skills, projects, and contact information.
-        </p>
-        <p><strong>Technology:</strong> HTML, CSS</p>
-        <p><strong>Purpose:</strong> Personal academic and project portfolio</p>
-      </div>
-
-      <div class="project-card">
-        <h3>Programming & Problem Solving Practice</h3>
-        <p>
-          Regular programming and problem-solving practice using C, C++, and Java.
-          I focus on improving logic building, basic algorithms, and object-oriented
-          programming concepts.
-        </p>
-        <p><strong>Topics:</strong> OOP, Problem Solving, Basic Algorithms</p>
-        <p><strong>Languages:</strong> C, C++, Java</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <div class="contact">
-      <p>
-        <strong>Email:</strong>
-        <a href="mailto:tanzid.cse.00724205101101@aust.edu">
-          tanzid.cse.00724205101101@aust.edu
+      <p><strong>Role:</strong> Solo Developer (game logic, mechanics, level design)</p>
+      <p><strong>Genre:</strong> 2D Arcade Action | <strong>Tech:</strong> C, C++, iGraphics, Visual Studio 2013</p>
+      <ul style="margin-top: 8px; margin-left: 18px;">
+        <li>4 progressive levels with unique enemy AI and terrain</li>
+        <li>Resource strategy (coins + fuel) to unlock mech transformation</li>
+        <li>Shooting mechanics and final boss combat</li>
+      </ul>
+      <div style="text-align: center; margin: 16px 0 8px;">
+        <a href="https://youtu.be/TsepZPAhvNM" target="_blank" rel="noopener noreferrer" class="youtube-btn">
+          ▶ Watch Gameplay on YouTube
         </a>
-      </p>
-      <p>
-        <strong>Phone:</strong>
-        <a href="tel:+8801779875316">+880 1779875316</a>
-      </p>
-      <p><strong>Location:</strong> Dhaka, Bangladesh</p>
-      <p>
-        <strong>GitHub:</strong>
-        <a href="https://github.com/Tanzid316" target="_blank" rel="noopener noreferrer">
-          Tanzid316
-        </a>
-      </p>
-      <p>
-        <strong>LinkedIn:</strong>
-        <a href="https://www.linkedin.com/in/sheikh-tanzid-ahmed-sadi-7a3a21237/" target="_blank" rel="noopener noreferrer">
-          Sheikh Tanzid Ahmed Sadi
-        </a>
-      </p>
+      </div>
     </div>
-  </section>
 
-  <footer>
-    <p>&copy; 2026 Sheikh Tanzid Ahmed Sadi. All Rights Reserved.</p>
-  </footer>
+    <div class="project-card">
+      <h3>Portfolio Website</h3>
+      <p>
+        Fully responsive personal portfolio with modern UI, smooth scroll, and animated
+        hero section. Showcases academic background, projects, and skills.
+      </p>
+      <p><strong>Technology:</strong> HTML5, CSS3 (animations, flex/grid)</p>
+      <p><strong>Highlights:</strong> interactive design, mobile-first, gradient animations</p>
+    </div>
 
+    <div class="project-card">
+      <h3>Problem Solving Lab</h3>
+      <p>
+        Daily coding challenges and algorithmic practice in C++, Java. Strong focus
+        on OOP principles, recursion, and efficient problem-solving strategies.
+      </p>
+      <p><strong>Focus areas:</strong> Sorting, searching, OOP modeling, recursion</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Let's Connect</h2>
+  <div class="contact">
+    <p><strong>Email:</strong> <a href="mailto:tanzid.cse.00724205101101@aust.edu">tanzid.cse.00724205101101@aust.edu</a></p>
+    <p><strong>Phone:</strong> <a href="tel:+8801779875316">+880 1779875316</a></p>
+    <p><strong>Location:</strong> Dhaka, Bangladesh</p>
+    <p><strong>GitHub:</strong> <a href="https://github.com/Tanzid316" target="_blank" rel="noopener noreferrer">Tanzid316</a></p>
+    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/sheikh-tanzid-ahmed-sadi-7a3a21237/" target="_blank" rel="noopener noreferrer">Sheikh Tanzid Ahmed Sadi</a></p>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 Sheikh Tanzid Ahmed Sadi — Built with passion & animation 🚀</p>
+</footer>
+
+<!-- small inline script to spawn dynamic floating dots in hero for extra motion (non-obtrusive) -->
+<script>
+  (function addFloatingParticles() {
+    const hero = document.querySelector('.hero');
+    if (!hero) return;
+    // create 12 floating particles for more magical atmosphere
+    for (let i = 0; i < 16; i++) {
+      const particle = document.createElement('div');
+      particle.classList.add('bg-particle');
+      const size = Math.random() * 8 + 3;
+      particle.style.width = size + 'px';
+      particle.style.height = size + 'px';
+      particle.style.left = Math.random() * 100 + '%';
+      particle.style.top = Math.random() * 100 + '%';
+      particle.style.animationDelay = Math.random() * 10 + 's';
+      particle.style.animationDuration = 6 + Math.random() * 8 + 's';
+      particle.style.background = `rgba(45, 212, 191, ${0.2 + Math.random() * 0.5})`;
+      hero.appendChild(particle);
+    }
+  })();
+</script>
 </body>
 </html>
