@@ -94,20 +94,12 @@
       isolation: isolate;
     }
 
-    /* Animated gradient background */
     @keyframes gradientWave {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
-    /* Floating abstract shapes for extra motion */
     .hero::before,
     .hero::after {
       content: '';
@@ -136,17 +128,10 @@
     }
 
     @keyframes floatShape {
-      0% {
-        transform: translate(0, 0) scale(1);
-        opacity: 0.4;
-      }
-      100% {
-        transform: translate(40px, -30px) scale(1.2);
-        opacity: 0.7;
-      }
+      0% { transform: translate(0, 0) scale(1); opacity: 0.4; }
+      100% { transform: translate(40px, -30px) scale(1.2); opacity: 0.7; }
     }
 
-    /* Additional floating micro-particles via pseudo */
     .hero .bg-particle {
       position: absolute;
       width: 6px;
@@ -159,20 +144,10 @@
     }
 
     @keyframes particleDrift {
-      0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 0;
-      }
-      20% {
-        opacity: 0.6;
-      }
-      80% {
-        opacity: 0.5;
-      }
-      100% {
-        transform: translateY(-90px) translateX(30px) rotate(120deg);
-        opacity: 0;
-      }
+      0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+      20% { opacity: 0.6; }
+      80% { opacity: 0.5; }
+      100% { transform: translateY(-90px) translateX(30px) rotate(120deg); opacity: 0; }
     }
 
     .hero-content {
@@ -183,19 +158,10 @@
     }
 
     @keyframes heroGlowRise {
-      0% {
-        opacity: 0;
-        transform: translateY(45px) scale(0.96);
-        filter: blur(4px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-        filter: blur(0);
-      }
+      0% { opacity: 0; transform: translateY(45px) scale(0.96); filter: blur(4px); }
+      100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
     }
 
-    /* profile image enhanced animation + glow pulse */
     .profile-img {
       width: 150px;
       height: 150px;
@@ -209,26 +175,14 @@
     }
 
     @keyframes floatProfile {
-      0% {
-        transform: translateY(0px);
-      }
-      50% {
-        transform: translateY(-8px);
-      }
-      100% {
-        transform: translateY(0px);
-      }
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+      100% { transform: translateY(0px); }
     }
 
     @keyframes borderGlowPulse {
-      0% {
-        box-shadow: 0 0 0 0 rgba(45, 212, 191, 0.5), 0 10px 20px rgba(0,0,0,0.2);
-        border-color: #2dd4bf;
-      }
-      100% {
-        box-shadow: 0 0 0 8px rgba(45, 212, 191, 0.2), 0 15px 30px rgba(0,0,0,0.3);
-        border-color: #f0fdfa;
-      }
+      0% { box-shadow: 0 0 0 0 rgba(45, 212, 191, 0.5), 0 10px 20px rgba(0,0,0,0.2); border-color: #2dd4bf; }
+      100% { box-shadow: 0 0 0 8px rgba(45, 212, 191, 0.2), 0 15px 30px rgba(0,0,0,0.3); border-color: #f0fdfa; }
     }
 
     .profile-img img {
@@ -243,7 +197,6 @@
       transform: scale(1.05);
     }
 
-    /* Animated name text-shadow + gradient */
     .hero h2 {
       font-size: 52px;
       margin-bottom: 12px;
@@ -253,19 +206,13 @@
       background-clip: text;
       color: transparent;
       animation: textGlowPulse 3s infinite alternate;
-      letter-spacing: -0.3px;
     }
 
     @keyframes textGlowPulse {
-      0% {
-        text-shadow: 0 0 0px rgba(165, 243, 252, 0);
-      }
-      100% {
-        text-shadow: 0 0 12px rgba(20, 184, 166, 0.5);
-      }
+      0% { text-shadow: 0 0 0px rgba(165, 243, 252, 0); }
+      100% { text-shadow: 0 0 12px rgba(20, 184, 166, 0.5); }
     }
 
-    /* animated underline effect on subtitle container */
     .hero .subtitle {
       font-size: 22px;
       margin-bottom: 16px;
@@ -275,32 +222,20 @@
       backdrop-filter: blur(6px);
       padding: 6px 20px;
       border-radius: 60px;
-      letter-spacing: 0.3px;
       animation: subtitleWave 2s infinite alternate;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     }
 
     @keyframes subtitleWave {
-      0% {
-        transform: scale(1);
-        background: rgba(15, 23, 42, 0.4);
-      }
-      100% {
-        transform: scale(1.02);
-        background: rgba(20, 184, 166, 0.2);
-        box-shadow: 0 4px 14px rgba(20,184,166,0.3);
-      }
+      0% { transform: scale(1); background: rgba(15, 23, 42, 0.4); }
+      100% { transform: scale(1.02); background: rgba(20, 184, 166, 0.2); box-shadow: 0 4px 14px rgba(20,184,166,0.3); }
     }
 
     .hero .summary {
       font-size: 18px;
       max-width: 720px;
       margin: 15px auto 28px;
-      font-weight: 400;
-      backdrop-filter: blur(2px);
     }
 
-    /* animated button with ripple */
     .hero-buttons {
       display: flex;
       justify-content: center;
@@ -343,7 +278,6 @@
     .btn:hover {
       color: white;
       transform: translateY(-3px);
-      box-shadow: 0 10px 22px rgba(0,0,0,0.2);
     }
 
     .btn-outline {
@@ -360,7 +294,6 @@
       color: #0f172a;
     }
 
-    /* YouTube button style animation */
     .youtube-btn {
       display: inline-flex;
       align-items: center;
@@ -373,20 +306,13 @@
       font-weight: bold;
       transition: all 0.25s;
       margin-top: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
       animation: softPulseRed 1.8s infinite;
     }
 
     @keyframes softPulseRed {
-      0% {
-        box-shadow: 0 0 0 0 rgba(255,0,0,0.4);
-      }
-      70% {
-        box-shadow: 0 0 0 10px rgba(255,0,0,0);
-      }
-      100% {
-        box-shadow: 0 0 0 0 rgba(255,0,0,0);
-      }
+      0% { box-shadow: 0 0 0 0 rgba(255,0,0,0.4); }
+      70% { box-shadow: 0 0 0 10px rgba(255,0,0,0); }
+      100% { box-shadow: 0 0 0 0 rgba(255,0,0,0); }
     }
 
     .youtube-btn:hover {
@@ -395,7 +321,6 @@
       animation: none;
     }
 
-    /* general sections */
     section {
       padding: 70px 80px;
     }
@@ -442,10 +367,6 @@
       box-shadow: 0 20px 32px rgba(0, 0, 0, 0.12);
     }
 
-    .education-info p {
-      margin: 10px 0;
-    }
-
     .skill-container {
       max-width: 1100px;
       margin: auto;
@@ -466,7 +387,6 @@
     .skill-box:hover {
       transform: translateY(-8px);
       background: linear-gradient(145deg, #fff, #f8fafc);
-      box-shadow: 0 18px 28px rgba(20, 184, 166, 0.12);
       border-bottom: 3px solid #14b8a6;
     }
 
@@ -507,25 +427,127 @@
       margin-bottom: 15px;
     }
 
-    .contact {
-      max-width: 680px;
-      margin: auto;
+    /* ========== CONTACT SECTION (FORMSPREE) ========== */
+    .contact-wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
       background: white;
-      padding: 40px;
       border-radius: 32px;
-      transition: 0.3s;
-      text-align: center;
+      box-shadow: 0 20px 35px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
     }
 
-    .contact a {
+    .contact-info {
+      background: #fefefe;
+      padding: 40px 32px;
+    }
+
+    .contact-info h3 {
+      font-size: 26px;
+      margin-bottom: 16px;
+      color: #0f172a;
+    }
+
+    .contact-info p {
+      margin: 12px 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .contact-info a {
       color: #0f766e;
-      font-weight: 600;
-      transition: 0.2s;
+      text-decoration: none;
+      border-bottom: 1px dashed #cbd5e1;
     }
 
-    .contact a:hover {
-      text-decoration: underline;
-      color: #0f3a36;
+    .contact-info a:hover {
+      color: #14b8a6;
+    }
+
+    .contact-form {
+      background: #f9fbfd;
+      padding: 40px 32px;
+    }
+
+    .contact-form h3 {
+      font-size: 26px;
+      margin-bottom: 20px;
+      color: #0f172a;
+    }
+
+    .form-group {
+      margin-bottom: 22px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #1e293b;
+      font-size: 14px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 18px;
+      border: 1px solid #e2e8f0;
+      border-radius: 24px;
+      font-size: 15px;
+      background: white;
+      transition: all 0.2s ease;
+      outline: none;
+      font-family: inherit;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: #14b8a6;
+      box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.2);
+    }
+
+    .form-group textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .submit-btn {
+      background: #14b8a6;
+      color: white;
+      border: none;
+      padding: 12px 28px;
+      font-size: 16px;
+      font-weight: 700;
+      border-radius: 40px;
+      cursor: pointer;
+      width: 100%;
+      transition: all 0.25s;
+    }
+
+    .submit-btn:hover {
+      background: #0f766e;
+      transform: translateY(-2px);
+    }
+
+    .form-note {
+      margin-top: 16px;
+      text-align: center;
+      font-size: 13px;
+      color: #64748b;
+    }
+
+    @media (max-width: 800px) {
+      .contact-wrapper {
+        grid-template-columns: 1fr;
+      }
+      .contact-info, .contact-form {
+        padding: 32px 24px;
+      }
     }
 
     footer {
@@ -577,9 +599,8 @@
   </nav>
 </header>
 
-<!-- HERO SECTION WITH RICH ANIMATIONS (gradient, floating particles, glow, pulse) -->
+<!-- HERO SECTION -->
 <section class="hero">
-  <!-- add dynamic floating particles via javascript (CSS only also but small extra dynamic) -->
   <div class="hero-content">
     <div class="profile-img">
       <img src="https://i.imgur.com/gR7Kagi.jpeg"
@@ -598,7 +619,6 @@
       <a href="#projects" class="btn">Explore Work</a>
       <a href="#contact" class="btn btn-outline">Contact Me</a>
     </div>
-    <!-- extra animated element: tiny interactive + youtube inline not needed here (inside project) -->
   </div>
 </section>
 
@@ -710,27 +730,54 @@
   </div>
 </section>
 
+<!-- ========== CONTACT SECTION WITH FORMSPREE (YOUR ENDPOINT INSERTED) ========== -->
 <section id="contact">
   <h2>Let's Connect</h2>
-  <div class="contact">
-    <p><strong>Email:</strong> <a href="mailto:tanzid.cse.00724205101101@aust.edu">tanzid.cse.00724205101101@aust.edu</a></p>
-    <p><strong>Phone:</strong> <a href="tel:+8801779875316">+880 1779875316</a></p>
-    <p><strong>Location:</strong> Dhaka, Bangladesh</p>
-    <p><strong>GitHub:</strong> <a href="https://github.com/Tanzid316" target="_blank" rel="noopener noreferrer">Tanzid316</a></p>
-    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/sheikh-tanzid-ahmed-sadi-7a3a21237/" target="_blank" rel="noopener noreferrer">Sheikh Tanzid Ahmed Sadi</a></p>
+  <div class="contact-wrapper">
+    <div class="contact-info">
+      <h3>📬 Reach out directly</h3>
+      <p><span style="font-size:1.3rem;">📧</span> <a href="mailto:tanzid.cse.00724205101101@aust.edu">tanzid.cse.00724205101101@aust.edu</a></p>
+      <p><span style="font-size:1.3rem;">📞</span> <a href="tel:+8801779875316">+880 1779875316</a></p>
+      <p><span style="font-size:1.3rem;">📍</span> Dhaka, Bangladesh</p>
+      <p><span style="font-size:1.3rem;">🐙</span> <a href="https://github.com/Tanzid316" target="_blank">github.com/Tanzid316</a></p>
+      <p><span style="font-size:1.3rem;">🔗</span> <a href="https://www.linkedin.com/in/sheikh-tanzid-ahmed-sadi-7a3a21237/" target="_blank">Sheikh Tanzid Ahmed Sadi</a></p>
+      <p style="margin-top: 24px; font-style: italic; font-size: 14px;">Open for internships, collaborations, or just tech talk 💡</p>
+    </div>
+
+    <div class="contact-form">
+      <h3>✍️ Send a message</h3>
+      <!-- ✅ Formspree endpoint inserted -->
+      <form action="https://formspree.io/f/xvzngeyj" method="POST">
+        <div class="form-group">
+          <label for="name">Full name *</label>
+          <input type="text" id="name" name="name" required placeholder="e.g. Tanzid Ahmed">
+        </div>
+        <div class="form-group">
+          <label for="email">Email address *</label>
+          <input type="email" id="email" name="email" required placeholder="hello@example.com">
+        </div>
+        <div class="form-group">
+          <label for="message">Message *</label>
+          <textarea id="message" name="message" required placeholder="Tell me about your opportunity, project idea, or just say hi..."></textarea>
+        </div>
+        <button type="submit" class="submit-btn">✨ Send Message ✨</button>
+        <div class="form-note">
+          📬 Your message will be sent via Formspree. I'll reply within 48 hours.
+        </div>
+      </form>
+    </div>
   </div>
 </section>
 
 <footer>
-  <p>&copy; 2026 Sheikh Tanzid Ahmed Sadi — Built with passion & animation</p>
+  <p>&copy; 2026 Sheikh Tanzid Ahmed Sadi — Built with passion & animation 🚀</p>
 </footer>
 
-<!-- small inline script to spawn dynamic floating dots in hero for extra motion (non-obtrusive) -->
+<!-- Floating particles script -->
 <script>
   (function addFloatingParticles() {
     const hero = document.querySelector('.hero');
     if (!hero) return;
-    // create 12 floating particles for more magical atmosphere
     for (let i = 0; i < 16; i++) {
       const particle = document.createElement('div');
       particle.classList.add('bg-particle');
@@ -746,5 +793,6 @@
     }
   })();
 </script>
+
 </body>
 </html>
