@@ -1,295 +1,69 @@
-# Sheikh Tanzid Ahmed Sadi — Personal Portfolio
+# 💻 Sheikh Tanzid Ahmed Sadi
 
-<div align="center">
-
-<img src="https://i.imgur.com/gR7Kagi.jpeg" alt="Sheikh Tanzid Ahmed Sadi" width="160" height="160" style="border-radius: 50%;" />
-
-## Computer Science & Engineering Student | Programmer | Game Developer
-
-Passionate about software development, object-oriented programming, problem solving, and 2D game creation.
-
-[![Portfolio](https://img.shields.io/badge/Portfolio-Live%20Website-14b8a6?style=for-the-badge)](https://tanzid316.github.io/MyPortfolio/)
-[![GitHub](https://img.shields.io/badge/GitHub-Tanzid316-181717?style=for-the-badge&logo=github)](https://github.com/Tanzid316)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Sheikh%20Tanzid%20Ahmed%20Sadi-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/sheikh-tanzid-ahmed-sadi-7a3a21237/)
-[![Email](https://img.shields.io/badge/Email-Contact%20Me-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:tanzid.cse.00724205101101@aust.edu)
-
-</div>
+<p align="center">
+  <a href="https://www.linkedin.com/in/sheikh-tanzid-ahmed-sadi-7a3a21237/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+  <a href="mailto:tanzid.cse.00724205101101@aust.edu"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail"></a>
+</p>
 
 ---
 
-## Live Demo
+### 🚀 About Me
 
-You can view my live portfolio website here:
+I am a passionate **Computer Science and Engineering (CSE)** student at **Ahsanullah University of Science and Technology (AUST)**, currently in my 3rd semester (2nd year, 1st semester). 
 
-**Live Website:** [https://tanzid316.github.io/MyPortfolio/](https://tanzid316.github.io/MyPortfolio/)
+I thrive on object-oriented programming paradigms, algorithm design, and merging structured engineering logic with creativity to build engaging 2D game experiences. I am constantly evolving my technical skill set through practical, real-world projects.
 
----
-
-## About This Repository
-
-This repository contains my personal portfolio website. It presents my academic background, technical skills, career objective, featured projects, and contact information through a clean, responsive, and animated web interface.
-
-The portfolio is designed to represent me as a Computer Science and Engineering student with interests in software development, game development, object-oriented programming, and problem solving.
+* 🔭 **Current Focus:** Strengthening software architecture patterns, data structures, and game mechanics.
+* 🎯 **Career Objective:** To become a versatile software engineer capable of designing scalable, impactful full-stack applications and innovative tech solutions.
+* 🏠 **Location:** Dhaka, Bangladesh
 
 ---
 
+### 🛠️ Technical Toolkit
 
-## About Me
-
-I am **Sheikh Tanzid Ahmed Sadi**, a Computer Science and Engineering student at **Ahsanullah University of Science and Technology**.
-
-I enjoy working with programming, object-oriented design, algorithmic thinking, and game development. My goal is to keep improving through practical projects and build software that is useful, creative, and impactful.
-
----
-
-## Career Objective
-
-My objective is to become a versatile software engineer capable of designing and developing meaningful digital solutions.
-
-I aim to strengthen my expertise in:
-
-- Software development
-- Software architecture
-- Game mechanics
-- Object-oriented programming
-- Full-stack development
-- Problem solving
+| Category | Technologies / Concepts |
+| :--- | :--- |
+| **Languages** | `C`, `C++`, `Java (OOP)`, `HTML5`, `CSS3` |
+| **Core Concepts** | Object-Oriented Design (OOD), Algorithmic Problem Solving, Data Structures |
+| **Tools & Libraries** | iGraphics, Visual Studio, VS Code, Git / GitHub |
 
 ---
 
-## Education
+### 📦 Featured Projects
 
-### Ahsanullah University of Science and Technology
+#### 🎮 MetaShift | [Watch Gameplay](https://youtu.be/TsepZPAhvNM)
+* **Description:** A dynamic, 2D arcade-style side-scrolling action game featuring resource strategy and evolution mechanics.
+* **Tech Stack:** C, C++, iGraphics, Visual Studio 2013
+* **Key Features:**
+    * 4 progressive levels engineered with distinct enemy AI and custom terrain adaptations.
+    * Resource management system (coins & fuel mechanics) utilized to trigger real-time mech transformations.
+    * Integrated custom collision detection, shooting mechanics, and a final boss encounter.
+    * *Role:* Solo Developer (Game logic, mechanics, and level design).
 
-**Degree:** B.Sc. in Computer Science and Engineering  
-**Current Semester:** 3rd Semester / 2nd Year 1st Semester  
-**Location:** Dhaka, Bangladesh  
+#### 🌐 Personal Portfolio Website
+* **Description:** A fully responsive, modern single-page web portfolio showcasing academic achievements, projects, and active skill sets.
+* **Tech Stack:** HTML5, CSS3 (Custom Grid/Flexbox layouts, fluid gradient animations)
+* **Key Features:** Optimized with an interactive, mobile-first design philosophy, custom DOM particle animations, and smooth scrolling architecture.
 
-### Birshreshtha Noor Mohammad Public College
-
-**Exam:** Higher Secondary Certificate  
-**Result:** GPA 5.00  
-
-### Armanitola Government High School
-
-**Exam:** Secondary School Certificate  
-**Result:** GPA 5.00  
-
----
-
-## Technical Skills
-
-### Programming Languages
-
-- C
-- C++
-- Java
-- HTML
-- CSS
-
-### Core Concepts
-
-- Object-Oriented Programming
-- Object-Oriented Design
-- Problem Solving
-- Basic Data Structures
-- Recursion
-- Sorting and Searching
-
-### Tools and Libraries
-
-- iGraphics
-- Visual Studio
-- Visual Studio Code
-- Git Basics
+#### 🧠 Problem Solving Lab
+* **Description:** A continuous archive of resolved programmatic logic and algorithmic challenges.
+* **Focus Areas:** Sorting and searching efficiency, recursive structures, and clean application of OOP modeling principles in C++ and Java.
 
 ---
 
-## Featured Project
+### 🎓 Education
 
-# MetaShift
-
-**MetaShift** is a 2D arcade-style side-scrolling action game developed using the **iGraphics** library in C.
-
-The game includes vehicle evolution, terrain adaptation, shooting mechanics, resource management, enemy AI, and boss combat.
-
-### Project Details
-
-| Category | Information |
-|---|---|
-| Project Name | MetaShift |
-| Type | 2D Arcade Action Game |
-| Role | Solo Developer |
-| Technologies | C, C++, iGraphics, Visual Studio 2013 |
-| Focus Areas | Game logic, mechanics, level design, enemy AI |
-
-### Key Features
-
-- 4 progressive levels with unique terrain
-- Enemy AI and level-based challenges
-- Coin and fuel-based resource strategy
-- Mech transformation system
-- Shooting mechanics
-- Final boss combat
-- Arcade-style side-scrolling gameplay
-
-### Gameplay Video
-
-[Watch Gameplay on YouTube](https://youtu.be/TsepZPAhvNM)
+* **B.Sc. in Computer Science and Engineering** *Ahsanullah University of Science and Technology (AUST)* | 2025 – Present
+* **Higher Secondary Certificate (HSC)** — **GPA 5.00** *Birshreshtha Noor Mohammad Public College*
+* **Secondary School Certificate (SSC)** — **GPA 5.00** *Armanitola Government High School*
 
 ---
 
-## Other Projects
+### 🤝 Let's Connect!
 
-### Portfolio Website
+I am always open to discussing software development opportunities, project ideas, or collaborative coding ventures. 
 
-A responsive personal portfolio website built with **HTML5** and **CSS3**.
-
-#### Highlights
-
-- Modern user interface
-- Smooth scrolling
-- Animated hero section
-- Responsive layout
-- Gradient animation
-- Contact form integration
-- Academic, skills, and project showcase
-
-### Problem Solving Lab
-
-A collection of regular coding practice and algorithmic exercises focused on improving programming logic.
-
-#### Focus Areas
-
-- C++
-- Java
-- Object-Oriented Programming
-- Recursion
-- Sorting
-- Searching
-- Problem-solving strategies
-
----
-
-## Website Features
-
-- Fully responsive design
-- Sticky navigation bar
-- Animated hero section
-- Profile image section
-- Smooth scroll navigation
-- Project showcase cards
-- Contact information section
-- Contact form using Formspree
-- Modern gradient and particle effects
-- Mobile-friendly layout
-
----
-
-## Technologies Used
-
-| Technology | Purpose |
-|---|---|
-| HTML5 | Website structure |
-| CSS3 | Styling, layout, animation |
-| JavaScript | Floating particle animation |
-| Formspree | Contact form handling |
-| GitHub | Version control |
-| GitHub Pages | Website deployment |
-
----
-
-## Folder Structure
-
-```text
-MyPortfolio/
-│
-├── index.html
-├── README.md
-└── assets/
-    └── portfolio-preview.png
-```
-
----
-
-## How to Run Locally
-
-Follow these steps to run the portfolio website on your local machine.
-
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/Tanzid316/MyPortfolio.git
-```
-
-### 2. Open the project folder
-
-```bash
-cd MyPortfolio
-```
-
-### 3. Run the website
-
-Open the `index.html` file directly in your browser.
-
-You can also use the **Live Server** extension in Visual Studio Code.
-
----
-
-## How to Deploy on GitHub Pages
-
-1. Go to your GitHub repository.
-2. Click **Settings**.
-3. Go to **Pages**.
-4. Under **Branch**, select `main`.
-5. Select `/root`.
-6. Click **Save**.
-7. Wait a few minutes.
-8. Your portfolio will be available at:
-
-```text
-https://tanzid316.github.io/MyPortfolio/
-```
-
----
-
-## Future Improvements
-
-- Add more academic and personal projects
-- Add project screenshots
-- Add downloadable resume
-- Add dark/light mode toggle
-- Improve accessibility
-- Add JavaScript-based interactive sections
-- Add backend support for contact messages
-- Add blog or learning journey section
-
----
-
-## Contact
-
-You can connect with me through the following platforms:
-
-- **Email:** [tanzid.cse.00724205101101@aust.edu](mailto:tanzid.cse.00724205101101@aust.edu)
-- **GitHub:** [Tanzid316](https://github.com/Tanzid316)
-- **LinkedIn:** [Sheikh Tanzid Ahmed Sadi](https://www.linkedin.com/in/sheikh-tanzid-ahmed-sadi-7a3a21237/)
-- **Portfolio:** [https://tanzid316.github.io/MyPortfolio/](https://tanzid316.github.io/MyPortfolio/)
-- **Location:** Dhaka, Bangladesh
-
----
-
-## License
-
-This project is open for learning and portfolio purposes.
-
-You may use the structure as inspiration, but please give proper credit if you reuse any major part of the design or content.
-
----
-
-<div align="center">
-
-### Built with passion, creativity, and continuous learning.
-
-© 2026 Sheikh Tanzid Ahmed Sadi
-
-</div>
+* **Email:** [tanzid.cse.00724205101101@aust.edu](mailto:tanzid.cse.00724205101101@aust.edu)
+* **LinkedIn:** [Sheikh Tanzid Ahmed Sadi](https://www.linkedin.com/in/sheikh-tanzid-ahmed-sadi-7a3a21237/)
+* **GitHub Portfolio:** [@Tanzid316](https://github.com/Tanzid316)
+* **Phone:** [+880 1779875316](tel:+8801779875316)
