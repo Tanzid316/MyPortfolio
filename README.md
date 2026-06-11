@@ -1,11 +1,19 @@
 # 💻 Sheikh Tanzid Ahmed Sadi
 
-<p align="center">
-  <a href="https://www.linkedin.com/in/sheikh-tanzid-ahmed-sadi-7a3a21237/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
-  <a href="mailto:tanzid.cse.00724205101101@aust.edu"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail"></a>
-</p>
+<div align="center">
 
----
+<img src="https://i.imgur.com/gR7Kagi.jpeg" alt="Sheikh Tanzid Ahmed Sadi" width="160" height="160" style="border-radius: 50%;" />
+
+## Computer Science & Engineering Student | Programmer | Game Developer
+
+Passionate about software development, object-oriented programming, problem solving, and 2D game creation.
+
+[![Portfolio](https://img.shields.io/badge/Portfolio-Live%20Website-14b8a6?style=for-the-badge)](https://tanzid316.github.io/MyPortfolio/)
+[![GitHub](https://img.shields.io/badge/GitHub-Tanzid316-181717?style=for-the-badge&logo=github)](https://github.com/Tanzid316)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Sheikh%20Tanzid%20Ahmed%20Sadi-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/sheikh-tanzid-ahmed-sadi-7a3a21237/)
+[![Email](https://img.shields.io/badge/Email-Contact%20Me-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:tanzid.cse.00724205101101@aust.edu)
+
+</div>
 
 ### 🚀 About Me
 
