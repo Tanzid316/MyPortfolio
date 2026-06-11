@@ -8,7 +8,7 @@
 
 Passionate about software development, object-oriented programming, problem solving, and 2D game creation.
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-Live%20Website-14b8a6?style=for-the-badge)](#)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Live%20Website-14b8a6?style=for-the-badge)](https://tanzid316.github.io/MyPortfolio/)
 [![GitHub](https://img.shields.io/badge/GitHub-Tanzid316-181717?style=for-the-badge&logo=github)](https://github.com/Tanzid316)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Sheikh%20Tanzid%20Ahmed%20Sadi-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/sheikh-tanzid-ahmed-sadi-7a3a21237/)
 [![Email](https://img.shields.io/badge/Email-Contact%20Me-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:tanzid.cse.00724205101101@aust.edu)
@@ -17,23 +17,19 @@ Passionate about software development, object-oriented programming, problem solv
 
 ---
 
-## About This Repository
+## Live Demo
 
-This repository contains my personal portfolio website. It presents my academic background, technical skills, career objective, featured projects, and contact information in a clean, responsive, and animated web interface.
+You can view my live portfolio website here:
 
-The portfolio is designed to represent me as a Computer Science and Engineering student with interests in software development, game development, object-oriented programming, and problem solving.
+**Live Website:** [https://tanzid316.github.io/MyPortfolio/](https://tanzid316.github.io/MyPortfolio/)
 
 ---
 
-## Live Demo
+## About This Repository
 
-**Live Website:** `Add your live portfolio link here`
+This repository contains my personal portfolio website. It presents my academic background, technical skills, career objective, featured projects, and contact information through a clean, responsive, and animated web interface.
 
-Example:
-
-```text
-https://your-username.github.io/your-repository-name/
-```
+The portfolio is designed to represent me as a Computer Science and Engineering student with interests in software development, game development, object-oriented programming, and problem solving.
 
 ---
 
@@ -120,7 +116,7 @@ I aim to strengthen my expertise in:
 
 ## Featured Project
 
-## MetaShift
+# MetaShift
 
 **MetaShift** is a 2D arcade-style side-scrolling action game developed using the **iGraphics** library in C.
 
@@ -207,15 +203,15 @@ A collection of regular coding practice and algorithmic exercises focused on imp
 | CSS3 | Styling, layout, animation |
 | JavaScript | Floating particle animation |
 | Formspree | Contact form handling |
-| GitHub | Version control and hosting |
-| GitHub Pages | Deployment option |
+| GitHub | Version control |
+| GitHub Pages | Website deployment |
 
 ---
 
 ## Folder Structure
 
 ```text
-portfolio-website/
+MyPortfolio/
 │
 ├── index.html
 ├── README.md
@@ -232,13 +228,13 @@ Follow these steps to run the portfolio website on your local machine.
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/Tanzid316/your-repository-name.git
+git clone https://github.com/Tanzid316/MyPortfolio.git
 ```
 
 ### 2. Open the project folder
 
 ```bash
-cd your-repository-name
+cd MyPortfolio
 ```
 
 ### 3. Run the website
@@ -258,10 +254,10 @@ You can also use the **Live Server** extension in Visual Studio Code.
 5. Select `/root`.
 6. Click **Save**.
 7. Wait a few minutes.
-8. Your portfolio will be live at:
+8. Your portfolio will be available at:
 
 ```text
-https://your-username.github.io/your-repository-name/
+https://tanzid316.github.io/MyPortfolio/
 ```
 
 ---
@@ -273,7 +269,7 @@ https://your-username.github.io/your-repository-name/
 - Add downloadable resume
 - Add dark/light mode toggle
 - Improve accessibility
-- Add animations using JavaScript libraries
+- Add JavaScript-based interactive sections
 - Add backend support for contact messages
 - Add blog or learning journey section
 
@@ -286,6 +282,7 @@ You can connect with me through the following platforms:
 - **Email:** [tanzid.cse.00724205101101@aust.edu](mailto:tanzid.cse.00724205101101@aust.edu)
 - **GitHub:** [Tanzid316](https://github.com/Tanzid316)
 - **LinkedIn:** [Sheikh Tanzid Ahmed Sadi](https://www.linkedin.com/in/sheikh-tanzid-ahmed-sadi-7a3a21237/)
+- **Portfolio:** [https://tanzid316.github.io/MyPortfolio/](https://tanzid316.github.io/MyPortfolio/)
 - **Location:** Dhaka, Bangladesh
 
 ---
