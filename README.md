@@ -33,15 +33,6 @@ The portfolio is designed to represent me as a Computer Science and Engineering 
 
 ---
 
-## Portfolio Preview
-
-> Add a screenshot of your portfolio here after uploading it to your repository.
-
-```markdown
-![Portfolio Preview](assets/portfolio-preview.png)
-```
-
----
 
 ## About Me
 
