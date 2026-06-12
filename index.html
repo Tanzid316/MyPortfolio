@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>Sheikh Tanzid Ahmed Sadi | Portfolio</title>
+  <title>Sheikh Tanzid Ahmed Sadi | Dark Portfolio</title>
   <style>
     * {
       margin: 0;
@@ -16,16 +16,16 @@
       scroll-behavior: smooth;
     }
 
+    /* ========== DARK THEME ROOT ========== */
     body {
-      background: #f4f6f8;
-      color: #1e293b;
+      background: #0a0f1a;
+      color: #eef2ff;
       line-height: 1.6;
       overflow-x: hidden;
     }
 
-
     header {
-      background: #0f172a;
+      background: #0b1120;
       color: white;
       padding: 18px 60px;
       display: flex;
@@ -35,21 +35,21 @@
       top: 0;
       z-index: 1000;
       backdrop-filter: blur(2px);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
     }
 
     header h1 {
       font-size: 24px;
       letter-spacing: 0.5px;
       font-weight: 600;
-      background: linear-gradient(135deg, #e2e8f0, #14b8a6);
+      background: linear-gradient(135deg, #e2e8f0, #2dd4bf);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
     }
 
     nav a {
-      color: #f1f5f9;
+      color: #e2e8f0;
       text-decoration: none;
       margin-left: 22px;
       font-weight: 600;
@@ -65,7 +65,7 @@
       left: 0;
       width: 0%;
       height: 2px;
-      background: #14b8a6;
+      background: #2dd4bf;
       transition: width 0.3s ease;
     }
 
@@ -74,10 +74,10 @@
     }
 
     nav a:hover {
-      color: #14b8a6;
+      color: #2dd4bf;
     }
 
-    /* ========== HERO SECTION — ANIMATION HUB ========== */
+    /* ========== HERO SECTION (DARK ACCENT) ========== */
     .hero {
       min-height: 92vh;
       display: flex;
@@ -87,7 +87,7 @@
       padding: 50px 25px;
       position: relative;
       overflow: hidden;
-      background: linear-gradient(125deg, #0b1120, #115e59, #134e4a);
+      background: linear-gradient(125deg, #07111f, #0b3b38, #062c2a);
       background-size: 300% 300%;
       animation: gradientWave 14s ease infinite alternate;
       color: white;
@@ -106,7 +106,7 @@
       position: absolute;
       width: 280px;
       height: 280px;
-      background: radial-gradient(circle, rgba(20,184,166,0.2) 0%, rgba(20,184,166,0) 70%);
+      background: radial-gradient(circle, rgba(45,212,191,0.25) 0%, rgba(45,212,191,0) 70%);
       border-radius: 50%;
       pointer-events: none;
       z-index: 0;
@@ -122,7 +122,7 @@
     .hero::after {
       bottom: -80px;
       right: -50px;
-      background: radial-gradient(circle, rgba(255,255,245,0.15) 0%, rgba(255,255,245,0) 70%);
+      background: radial-gradient(circle, rgba(255,255,245,0.12) 0%, rgba(255,255,245,0) 70%);
       animation-duration: 19s;
       animation-delay: -2s;
     }
@@ -136,9 +136,9 @@
       position: absolute;
       width: 6px;
       height: 6px;
-      background: #2dd4bf;
+      background: #4fd1c5;
       border-radius: 50%;
-      opacity: 0.3;
+      opacity: 0.35;
       animation: particleDrift 12s infinite linear;
       pointer-events: none;
     }
@@ -170,7 +170,7 @@
       overflow: hidden;
       border: 4px solid #2dd4bf;
       background: #0f172a;
-      box-shadow: 0 0 0 0 rgba(45, 212, 191, 0.5);
+      box-shadow: 0 0 0 0 rgba(45, 212, 191, 0.6);
       animation: floatProfile 3.5s ease-in-out infinite, borderGlowPulse 2.2s infinite alternate;
     }
 
@@ -181,8 +181,8 @@
     }
 
     @keyframes borderGlowPulse {
-      0% { box-shadow: 0 0 0 0 rgba(45, 212, 191, 0.5), 0 10px 20px rgba(0,0,0,0.2); border-color: #2dd4bf; }
-      100% { box-shadow: 0 0 0 8px rgba(45, 212, 191, 0.2), 0 15px 30px rgba(0,0,0,0.3); border-color: #f0fdfa; }
+      0% { box-shadow: 0 0 0 0 rgba(45, 212, 191, 0.5), 0 10px 20px rgba(0,0,0,0.4); border-color: #2dd4bf; }
+      100% { box-shadow: 0 0 0 8px rgba(45, 212, 191, 0.25), 0 15px 30px rgba(0,0,0,0.6); border-color: #ccfbf1; }
     }
 
     .profile-img img {
@@ -210,7 +210,7 @@
 
     @keyframes textGlowPulse {
       0% { text-shadow: 0 0 0px rgba(165, 243, 252, 0); }
-      100% { text-shadow: 0 0 12px rgba(20, 184, 166, 0.5); }
+      100% { text-shadow: 0 0 12px rgba(45, 212, 191, 0.5); }
     }
 
     .hero .subtitle {
@@ -218,22 +218,23 @@
       margin-bottom: 16px;
       font-weight: 600;
       display: inline-block;
-      background: rgba(15, 23, 42, 0.5);
-      backdrop-filter: blur(6px);
+      background: rgba(7, 17, 31, 0.7);
+      backdrop-filter: blur(8px);
       padding: 6px 20px;
       border-radius: 60px;
       animation: subtitleWave 2s infinite alternate;
     }
 
     @keyframes subtitleWave {
-      0% { transform: scale(1); background: rgba(15, 23, 42, 0.4); }
-      100% { transform: scale(1.02); background: rgba(20, 184, 166, 0.2); box-shadow: 0 4px 14px rgba(20,184,166,0.3); }
+      0% { transform: scale(1); background: rgba(7, 17, 31, 0.6); }
+      100% { transform: scale(1.02); background: rgba(45, 212, 191, 0.25); box-shadow: 0 4px 14px rgba(45,212,191,0.3); }
     }
 
     .hero .summary {
       font-size: 18px;
       max-width: 720px;
       margin: 15px auto 28px;
+      color: #eef2ff;
     }
 
     .hero-buttons {
@@ -246,13 +247,13 @@
     .btn {
       display: inline-block;
       padding: 12px 28px;
-      background: white;
+      background: #f1f5f9;
       color: #0f172a;
       text-decoration: none;
       border-radius: 40px;
       font-weight: 700;
       transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
       position: relative;
       overflow: hidden;
       z-index: 1;
@@ -265,7 +266,7 @@
       left: 0;
       width: 0%;
       height: 100%;
-      background: #14b8a6;
+      background: #2dd4bf;
       z-index: -1;
       transition: width 0.4s ease;
       border-radius: 40px;
@@ -276,18 +277,18 @@
     }
 
     .btn:hover {
-      color: white;
+      color: #0f172a;
       transform: translateY(-3px);
     }
 
     .btn-outline {
       background: transparent;
-      color: white;
-      border: 2px solid white;
+      color: #f1f5f9;
+      border: 2px solid #f1f5f9;
     }
 
     .btn-outline::before {
-      background: white;
+      background: #f1f5f9;
     }
 
     .btn-outline:hover {
@@ -305,12 +306,11 @@
       text-decoration: none;
       font-weight: bold;
       transition: all 0.25s;
-      margin-top: 12px;
       animation: softPulseRed 1.8s infinite;
     }
 
     @keyframes softPulseRed {
-      0% { box-shadow: 0 0 0 0 rgba(255,0,0,0.4); }
+      0% { box-shadow: 0 0 0 0 rgba(255,0,0,0.5); }
       70% { box-shadow: 0 0 0 10px rgba(255,0,0,0); }
       100% { box-shadow: 0 0 0 0 rgba(255,0,0,0); }
     }
@@ -329,17 +329,18 @@
       text-align: center;
       margin-bottom: 40px;
       font-size: 34px;
-      color: #0f172a;
+      color: #f0f9ff;
       position: relative;
       display: inline-block;
       width: 100%;
+      font-weight: 700;
     }
 
     section h2:after {
       content: '';
       width: 70px;
       height: 4px;
-      background: #14b8a6;
+      background: #2dd4bf;
       display: block;
       margin: 12px auto 0;
       border-radius: 4px;
@@ -350,21 +351,25 @@
       width: 120px;
     }
 
+    /* DARK CARD STYLE */
     .card {
       max-width: 900px;
       margin: auto;
       text-align: center;
       font-size: 18px;
-      background: white;
+      background: #111827;
       padding: 32px;
       border-radius: 28px;
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid #1e2a3a;
+      color: #e2e8f0;
     }
 
     .card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 20px 32px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 20px 32px rgba(0, 0, 0, 0.5);
+      border-color: #2dd4bf40;
     }
 
     .skill-container {
@@ -376,18 +381,25 @@
     }
 
     .skill-box {
-      background: white;
+      background: #111827;
       padding: 32px 20px;
       border-radius: 28px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
       text-align: center;
       transition: all 0.3s ease;
+      border: 1px solid #1f2a3e;
+      color: #e2e8f0;
     }
 
     .skill-box:hover {
       transform: translateY(-8px);
-      background: linear-gradient(145deg, #fff, #f8fafc);
-      border-bottom: 3px solid #14b8a6;
+      background: #1a2436;
+      border-bottom: 3px solid #2dd4bf;
+    }
+
+    .skill-box h3 {
+      color: #ccfbf1;
+      margin-bottom: 12px;
     }
 
     .projects {
@@ -397,23 +409,26 @@
     }
 
     .project-card {
-      background: white;
+      background: #111827;
       padding: 28px;
       border-radius: 28px;
-      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
       transition: all 0.3s;
       display: flex;
       flex-direction: column;
+      border: 1px solid #233045;
+      color: #e2e8f0;
     }
 
     .project-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 24px 40px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 24px 40px rgba(0, 0, 0, 0.6);
+      border-color: #2dd4bf60;
     }
 
     .featured {
-      border-left: 6px solid #14b8a6;
-      background: linear-gradient(105deg, #ffffff, #fafffe);
+      border-left: 6px solid #2dd4bf;
+      background: #121c2c;
     }
 
     .tag {
@@ -427,28 +442,30 @@
       margin-bottom: 15px;
     }
 
-   
+    /* CONTACT WRAPPER DARK */
     .contact-wrapper {
       max-width: 1100px;
       margin: 0 auto;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 40px;
-      background: white;
+      background: #0f172a;
       border-radius: 32px;
-      box-shadow: 0 20px 35px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 20px 35px rgba(0, 0, 0, 0.5);
       overflow: hidden;
+      border: 1px solid #2d3a4e;
     }
 
     .contact-info {
-      background: #fefefe;
+      background: #0b1120;
       padding: 40px 32px;
+      color: #e2e8f0;
     }
 
     .contact-info h3 {
       font-size: 26px;
       margin-bottom: 16px;
-      color: #0f172a;
+      color: #ccfbf1;
     }
 
     .contact-info p {
@@ -457,27 +474,28 @@
       align-items: center;
       gap: 12px;
       flex-wrap: wrap;
+      color: #cbd5e6;
     }
 
     .contact-info a {
-      color: #0f766e;
+      color: #5eead4;
       text-decoration: none;
-      border-bottom: 1px dashed #cbd5e1;
+      border-bottom: 1px dashed #2dd4bf80;
     }
 
     .contact-info a:hover {
-      color: #14b8a6;
+      color: #2dd4bf;
     }
 
     .contact-form {
-      background: #f9fbfd;
+      background: #0f172a;
       padding: 40px 32px;
     }
 
     .contact-form h3 {
       font-size: 26px;
       margin-bottom: 20px;
-      color: #0f172a;
+      color: #ccfbf1;
     }
 
     .form-group {
@@ -488,7 +506,7 @@
       display: block;
       margin-bottom: 8px;
       font-weight: 600;
-      color: #1e293b;
+      color: #cbd5f0;
       font-size: 14px;
     }
 
@@ -496,10 +514,11 @@
     .form-group textarea {
       width: 100%;
       padding: 12px 18px;
-      border: 1px solid #e2e8f0;
+      border: 1px solid #334155;
       border-radius: 24px;
       font-size: 15px;
-      background: white;
+      background: #030712;
+      color: #f1f5f9;
       transition: all 0.2s ease;
       outline: none;
       font-family: inherit;
@@ -507,8 +526,9 @@
 
     .form-group input:focus,
     .form-group textarea:focus {
-      border-color: #14b8a6;
-      box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.2);
+      border-color: #2dd4bf;
+      box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.3);
+      background: #0f172a;
     }
 
     .form-group textarea {
@@ -516,9 +536,14 @@
       resize: vertical;
     }
 
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: #6c7a91;
+    }
+
     .submit-btn {
-      background: #14b8a6;
-      color: white;
+      background: #2dd4bf;
+      color: #0b1120;
       border: none;
       padding: 12px 28px;
       font-size: 16px;
@@ -530,15 +555,26 @@
     }
 
     .submit-btn:hover {
-      background: #0f766e;
+      background: #14b8a6;
       transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(45, 212, 191, 0.3);
+      color: white;
     }
 
     .form-note {
       margin-top: 16px;
       text-align: center;
       font-size: 13px;
-      color: #64748b;
+      color: #94a3b8;
+    }
+
+    footer {
+      background: #030712;
+      color: #9ca3af;
+      text-align: center;
+      padding: 24px;
+      font-size: 14px;
+      border-top: 1px solid #1e293b;
     }
 
     @media (max-width: 800px) {
@@ -548,14 +584,6 @@
       .contact-info, .contact-form {
         padding: 32px 24px;
       }
-    }
-
-    footer {
-      background: #0f172a;
-      color: #cbd5e1;
-      text-align: center;
-      padding: 24px;
-      font-size: 14px;
     }
 
     @media (max-width: 768px) {
@@ -582,6 +610,30 @@
         width: 120px;
         height: 120px;
       }
+    }
+
+    a {
+      color: #5eead4;
+    }
+    a:hover {
+      color: #2dd4bf;
+    }
+    .education-info h3 {
+      color: #ccfbf1;
+    }
+    .education-info p {
+      color: #d1d5db;
+    }
+    .project-card ul {
+      margin-left: 18px;
+      margin-top: 12px;
+      color: #cbd5e1;
+    }
+    .project-card p {
+      margin: 10px 0;
+    }
+    .skill-box p {
+      color: #cbd5e6;
     }
   </style>
 </head>
@@ -735,17 +787,16 @@
   <div class="contact-wrapper">
     <div class="contact-info">
       <h3>Reach out directly</h3>
-      <p><span style="font-size:1.3rem;"></span> <a href="mailto:tanzid.cse.00724205101101@aust.edu">Gmail : tanzid.cse.00724205101101@aust.edu</a></p>
-      <p><span style="font-size:1.3rem;"></span> <a href="tel:+8801779875316">Phone : +880 1779875316</a></p>
-      <p><span style="font-size:1.3rem;"></span>Location : Dhaka, Bangladesh</p>
-      <p><span style="font-size:1.3rem;"></span> <a href="https://github.com/Tanzid316" target="_blank">Github : Tanzid316</a></p>
-      <p><span style="font-size:1.3rem;"></span> <a href="https://www.linkedin.com/in/sheikh-tanzid-ahmed-sadi-7a3a21237/" target="_blank">Linkedin : Sheikh Tanzid Ahmed Sadi</a></p>
-      <p style="margin-top: 24px; font-style: italic; font-size: 14px;">For any query, just talk to me.</p>
+      <p><span style="font-size:1.3rem;"></span> <a href="mailto:tanzid.cse.00724205101101@aust.edu">tanzid.cse.00724205101101@aust.edu</a></p>
+      <p><span style="font-size:1.3rem;"></span> <a href="tel:+8801779875316">+880 1779875316</a></p>
+      <p><span style="font-size:1.3rem;"></span> Dhaka, Bangladesh</p>
+      <p><span style="font-size:1.3rem;"></span> <a href="https://github.com/Tanzid316" target="_blank">github.com/Tanzid316</a></p>
+      <p><span style="font-size:1.3rem;"></span> <a href="https://www.linkedin.com/in/sheikh-tanzid-ahmed-sadi-7a3a21237/" target="_blank">Sheikh Tanzid Ahmed Sadi</a></p>
+      <p style="margin-top: 24px; font-style: italic; font-size: 14px; color: #9ca3af;">For any query, just talk to me.</p>
     </div>
 
     <div class="contact-form">
       <h3>Send a message</h3>
-      
       <form action="https://formspree.io/f/xvzngeyj" method="POST">
         <div class="form-group">
           <label for="name">Full name *</label>
@@ -769,9 +820,8 @@
 </section>
 
 <footer>
-  <p>&copy; 2026 Sheikh Tanzid Ahmed Sadi — Built with passion & animation </p>
+  <p>&copy; 2026 Sheikh Tanzid Ahmed Sadi — Built with passion & dark theme elegance</p>
 </footer>
-
 
 <script>
   (function addFloatingParticles() {
@@ -787,7 +837,7 @@
       particle.style.top = Math.random() * 100 + '%';
       particle.style.animationDelay = Math.random() * 10 + 's';
       particle.style.animationDuration = 6 + Math.random() * 8 + 's';
-      particle.style.background = `rgba(45, 212, 191, ${0.2 + Math.random() * 0.5})`;
+      particle.style.background = `rgba(45, 212, 191, ${0.25 + Math.random() * 0.5})`;
       hero.appendChild(particle);
     }
   })();
