@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>Sheikh Tanzid Ahmed Sadi | Dark Portfolio</title>
+  <title>Sheikh Tanzid Ahmed Sadi | Immersive Portfolio</title>
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     * {
       margin: 0;
@@ -22,10 +24,30 @@
       color: #eef2ff;
       line-height: 1.6;
       overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Canvas Background (animated particle network) */
+    #bg-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      z-index: 0;
+      pointer-events: none;
+      background: radial-gradient(circle at 20% 30%, #07111f, #03070f);
+    }
+
+    .content-wrapper {
+      position: relative;
+      z-index: 2;
     }
 
     header {
-      background: #0b1120;
+      background: rgba(11, 18, 32, 0.85);
+      backdrop-filter: blur(12px);
       color: white;
       padding: 18px 60px;
       display: flex;
@@ -34,8 +56,8 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      backdrop-filter: blur(2px);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      border-bottom: 1px solid rgba(45, 212, 191, 0.2);
     }
 
     header h1 {
@@ -77,7 +99,7 @@
       color: #2dd4bf;
     }
 
-    /* ========== HERO SECTION (DARK ACCENT) ========== */
+    /* Hero Section */
     .hero {
       min-height: 92vh;
       display: flex;
@@ -86,75 +108,14 @@
       text-align: center;
       padding: 50px 25px;
       position: relative;
-      overflow: hidden;
-      background: linear-gradient(125deg, #07111f, #0b3b38, #062c2a);
-      background-size: 300% 300%;
-      animation: gradientWave 14s ease infinite alternate;
-      color: white;
       isolation: isolate;
-    }
-
-    @keyframes gradientWave {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    .hero::before,
-    .hero::after {
-      content: '';
-      position: absolute;
-      width: 280px;
-      height: 280px;
-      background: radial-gradient(circle, rgba(45,212,191,0.25) 0%, rgba(45,212,191,0) 70%);
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 0;
-      animation: floatShape 18s infinite alternate ease-in-out;
-    }
-
-    .hero::before {
-      top: -70px;
-      left: -60px;
-      animation-duration: 22s;
-    }
-
-    .hero::after {
-      bottom: -80px;
-      right: -50px;
-      background: radial-gradient(circle, rgba(255,255,245,0.12) 0%, rgba(255,255,245,0) 70%);
-      animation-duration: 19s;
-      animation-delay: -2s;
-    }
-
-    @keyframes floatShape {
-      0% { transform: translate(0, 0) scale(1); opacity: 0.4; }
-      100% { transform: translate(40px, -30px) scale(1.2); opacity: 0.7; }
-    }
-
-    .hero .bg-particle {
-      position: absolute;
-      width: 6px;
-      height: 6px;
-      background: #4fd1c5;
-      border-radius: 50%;
-      opacity: 0.35;
-      animation: particleDrift 12s infinite linear;
-      pointer-events: none;
-    }
-
-    @keyframes particleDrift {
-      0% { transform: translateY(0) rotate(0deg); opacity: 0; }
-      20% { opacity: 0.6; }
-      80% { opacity: 0.5; }
-      100% { transform: translateY(-90px) translateX(30px) rotate(120deg); opacity: 0; }
     }
 
     .hero-content {
       max-width: 880px;
       position: relative;
       z-index: 3;
-      animation: heroGlowRise 1s cubic-bezier(0.2, 0.9, 0.3, 1.1);
+      animation: heroGlowRise 0.9s cubic-bezier(0.2, 0.9, 0.3, 1.1);
     }
 
     @keyframes heroGlowRise {
@@ -181,8 +142,8 @@
     }
 
     @keyframes borderGlowPulse {
-      0% { box-shadow: 0 0 0 0 rgba(45, 212, 191, 0.5), 0 10px 20px rgba(0,0,0,0.4); border-color: #2dd4bf; }
-      100% { box-shadow: 0 0 0 8px rgba(45, 212, 191, 0.25), 0 15px 30px rgba(0,0,0,0.6); border-color: #ccfbf1; }
+      0% { box-shadow: 0 0 0 0 rgba(45, 212, 191, 0.5); border-color: #2dd4bf; }
+      100% { box-shadow: 0 0 0 8px rgba(45, 212, 191, 0.25); border-color: #ccfbf1; }
     }
 
     .profile-img img {
@@ -205,35 +166,39 @@
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      animation: textGlowPulse 3s infinite alternate;
     }
 
-    @keyframes textGlowPulse {
-      0% { text-shadow: 0 0 0px rgba(165, 243, 252, 0); }
-      100% { text-shadow: 0 0 12px rgba(45, 212, 191, 0.5); }
+    .typing-container {
+      min-height: 80px;
+      margin: 15px 0 10px;
     }
-
-    .hero .subtitle {
-      font-size: 22px;
-      margin-bottom: 16px;
+    .typing {
+      font-size: 28px;
       font-weight: 600;
       display: inline-block;
-      background: rgba(7, 17, 31, 0.7);
+      background: rgba(7, 17, 31, 0.6);
       backdrop-filter: blur(8px);
-      padding: 6px 20px;
+      padding: 8px 24px;
       border-radius: 60px;
-      animation: subtitleWave 2s infinite alternate;
+      letter-spacing: 1px;
+      color: #ccfbf1;
+      border-left: 3px solid #2dd4bf;
+      border-right: 3px solid #2dd4bf;
     }
-
-    @keyframes subtitleWave {
-      0% { transform: scale(1); background: rgba(7, 17, 31, 0.6); }
-      100% { transform: scale(1.02); background: rgba(45, 212, 191, 0.25); box-shadow: 0 4px 14px rgba(45,212,191,0.3); }
+    .typed-cursor {
+      font-size: 28px;
+      color: #2dd4bf;
+      animation: blink 0.8s infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
     }
 
     .hero .summary {
       font-size: 18px;
       max-width: 720px;
-      margin: 15px auto 28px;
+      margin: 20px auto 28px;
       color: #eef2ff;
     }
 
@@ -351,25 +316,30 @@
       width: 120px;
     }
 
-    /* DARK CARD STYLE */
+    /* Cards & containers (glassmorphic) */
+    .card, .skill-box, .project-card, .contact-wrapper {
+      background: rgba(17, 24, 39, 0.75);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(45, 212, 191, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
     .card {
       max-width: 900px;
       margin: auto;
       text-align: center;
       font-size: 18px;
-      background: #111827;
       padding: 32px;
       border-radius: 28px;
       box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border: 1px solid #1e2a3a;
       color: #e2e8f0;
     }
 
-    .card:hover {
+    .card:hover, .skill-box:hover, .project-card:hover {
       transform: translateY(-8px);
       box-shadow: 0 20px 32px rgba(0, 0, 0, 0.5);
-      border-color: #2dd4bf40;
+      border-color: #2dd4bf60;
+      background: rgba(20, 30, 45, 0.85);
     }
 
     .skill-container {
@@ -381,20 +351,9 @@
     }
 
     .skill-box {
-      background: #111827;
       padding: 32px 20px;
       border-radius: 28px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
       text-align: center;
-      transition: all 0.3s ease;
-      border: 1px solid #1f2a3e;
-      color: #e2e8f0;
-    }
-
-    .skill-box:hover {
-      transform: translateY(-8px);
-      background: #1a2436;
-      border-bottom: 3px solid #2dd4bf;
     }
 
     .skill-box h3 {
@@ -409,26 +368,15 @@
     }
 
     .project-card {
-      background: #111827;
       padding: 28px;
       border-radius: 28px;
-      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
-      transition: all 0.3s;
       display: flex;
       flex-direction: column;
-      border: 1px solid #233045;
-      color: #e2e8f0;
-    }
-
-    .project-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 24px 40px rgba(0, 0, 0, 0.6);
-      border-color: #2dd4bf60;
     }
 
     .featured {
       border-left: 6px solid #2dd4bf;
-      background: #121c2c;
+      background: linear-gradient(145deg, #121c2c, #0f172a);
     }
 
     .tag {
@@ -442,29 +390,25 @@
       margin-bottom: 15px;
     }
 
-    /* CONTACT WRAPPER DARK */
+    /* Contact wrapper */
     .contact-wrapper {
       max-width: 1100px;
       margin: 0 auto;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 40px;
-      background: #0f172a;
       border-radius: 32px;
-      box-shadow: 0 20px 35px rgba(0, 0, 0, 0.5);
       overflow: hidden;
-      border: 1px solid #2d3a4e;
+      padding: 0;
     }
 
-    .contact-info {
-      background: #0b1120;
+    .contact-info, .contact-form {
       padding: 40px 32px;
-      color: #e2e8f0;
     }
 
-    .contact-info h3 {
+    .contact-info h3, .contact-form h3 {
       font-size: 26px;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
       color: #ccfbf1;
     }
 
@@ -474,7 +418,6 @@
       align-items: center;
       gap: 12px;
       flex-wrap: wrap;
-      color: #cbd5e6;
     }
 
     .contact-info a {
@@ -483,365 +426,372 @@
       border-bottom: 1px dashed #2dd4bf80;
     }
 
-    .contact-info a:hover {
-      color: #2dd4bf;
-    }
-
-    .contact-form {
-      background: #0f172a;
-      padding: 40px 32px;
-    }
-
-    .contact-form h3 {
-      font-size: 26px;
-      margin-bottom: 20px;
-      color: #ccfbf1;
-    }
-
-    .form-group {
-      margin-bottom: 22px;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: 600;
-      color: #cbd5f0;
-      font-size: 14px;
-    }
-
-    .form-group input,
-    .form-group textarea {
+    .form-group input, .form-group textarea {
       width: 100%;
       padding: 12px 18px;
-      border: 1px solid #334155;
       border-radius: 24px;
-      font-size: 15px;
       background: #030712;
+      border: 1px solid #334155;
       color: #f1f5f9;
-      transition: all 0.2s ease;
-      outline: none;
-      font-family: inherit;
     }
 
-    .form-group input:focus,
-    .form-group textarea:focus {
+    .form-group input:focus, .form-group textarea:focus {
       border-color: #2dd4bf;
       box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.3);
-      background: #0f172a;
-    }
-
-    .form-group textarea {
-      min-height: 110px;
-      resize: vertical;
-    }
-
-    .form-group input::placeholder,
-    .form-group textarea::placeholder {
-      color: #6c7a91;
     }
 
     .submit-btn {
       background: #2dd4bf;
       color: #0b1120;
       border: none;
-      padding: 12px 28px;
-      font-size: 16px;
-      font-weight: 700;
+      padding: 12px;
       border-radius: 40px;
-      cursor: pointer;
+      font-weight: 700;
       width: 100%;
-      transition: all 0.25s;
+      cursor: pointer;
+      transition: 0.25s;
     }
-
     .submit-btn:hover {
       background: #14b8a6;
       transform: translateY(-2px);
-      box-shadow: 0 6px 14px rgba(45, 212, 191, 0.3);
-      color: white;
     }
 
-    .form-note {
-      margin-top: 16px;
+    /* Social links only (coding profiles removed) */
+    .connect-container {
       text-align: center;
-      font-size: 13px;
-      color: #94a3b8;
+    }
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin: 30px 0;
+      flex-wrap: wrap;
+    }
+    .social-link {
+      background: rgba(45, 212, 191, 0.15);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      transition: all 0.3s;
+      color: #2dd4bf;
+      text-decoration: none;
+      border: 1px solid #2dd4bf60;
+    }
+    .social-link:hover {
+      background: #2dd4bf;
+      color: #0f172a;
+      transform: translateY(-5px);
     }
 
     footer {
-      background: #030712;
-      color: #9ca3af;
+      background: #030712c9;
+      backdrop-filter: blur(4px);
       text-align: center;
       padding: 24px;
-      font-size: 14px;
-      border-top: 1px solid #1e293b;
-    }
-
-    @media (max-width: 800px) {
-      .contact-wrapper {
-        grid-template-columns: 1fr;
-      }
-      .contact-info, .contact-form {
-        padding: 32px 24px;
-      }
+      margin-top: 20px;
+      border-top: 1px solid #2dd4bf20;
     }
 
     @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        padding: 16px 20px;
-      }
-      nav {
-        margin-top: 12px;
-      }
-      nav a {
-        margin: 0 10px;
-      }
-      .hero h2 {
-        font-size: 36px;
-      }
-      .hero .subtitle {
-        font-size: 18px;
-      }
-      section {
-        padding: 45px 20px;
-      }
-      .profile-img {
-        width: 120px;
-        height: 120px;
-      }
-    }
-
-    a {
-      color: #5eead4;
-    }
-    a:hover {
-      color: #2dd4bf;
-    }
-    .education-info h3 {
-      color: #ccfbf1;
-    }
-    .education-info p {
-      color: #d1d5db;
-    }
-    .project-card ul {
-      margin-left: 18px;
-      margin-top: 12px;
-      color: #cbd5e1;
-    }
-    .project-card p {
-      margin: 10px 0;
-    }
-    .skill-box p {
-      color: #cbd5e6;
+      header { flex-direction: column; padding: 16px 20px; }
+      nav { margin-top: 12px; }
+      section { padding: 45px 20px; }
+      .hero h2 { font-size: 36px; }
+      .typing { font-size: 22px; }
+      .contact-wrapper { grid-template-columns: 1fr; }
+      .profile-img { width: 140px; height: 140px; }
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>Sheikh Tanzid Ahmed Sadi</h1>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#objective">Objective</a>
-    <a href="#education">Education</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+<canvas id="bg-canvas"></canvas>
 
-<!-- HERO SECTION -->
-<section class="hero">
-  <div class="hero-content">
-    <div class="profile-img">
-      <img src="https://i.imgur.com/gR7Kagi.jpeg"
-           alt="Sheikh Tanzid Ahmed Sadi"
-           onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?background=14b8a6&color=fff&name=Sheikh+Tanzid&length=2&bold=true&size=140';">
-    </div>
-    <h2><b>Sheikh Tanzid Ahmed Sadi</b></h2>
-    <p class="subtitle">
-      Computer Science & Engineering Student | Programmer | Game Developer
-    </p>
-    <p class="summary">
-      Passionate about software development, object-oriented programming,
-      problem solving, and 2D game creation. Constantly evolving through real projects.
-    </p>
-    <div class="hero-buttons">
-      <a href="#projects" class="btn">Explore Work</a>
-      <a href="#contact" class="btn btn-outline">Contact Me</a>
-    </div>
-  </div>
-</section>
+<div class="content-wrapper">
+  <header>
+    <h1>Sheikh Tanzid Ahmed Sadi</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#objective">Objective</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#connect">Connect</a>
+    </nav>
+  </header>
 
-<section id="about">
-  <h2>About Me</h2>
-  <div class="card">
-    <p>
-      I am Sheikh Tanzid Ahmed Sadi, a Computer Science and Engineering student at
-      Ahsanullah University of Science and Technology. Currently in the 3rd semester (2nd year 1st semester).
-      I thrive on programming, OOP paradigms, algorithmic challenges, and game development.
-      I love merging creativity with logic to build functional and fun experiences.
-    </p>
-  </div>
-</section>
-
-<section id="objective">
-  <h2>Career Objective</h2>
-  <div class="card">
-    <p>
-      To become a versatile software engineer who designs impactful solutions. I aim
-      to strengthen my expertise in software architecture, game mechanics, and full-stack
-      development while contributing to meaningful tech innovations.
-    </p>
-  </div>
-</section>
-
-<section id="education">
-  <h2>Education</h2>
-  <div class="card education-info">
-    <h3>Ahsanullah University of Science and Technology</h3>
-    <p><strong>Degree:</strong> B.Sc. in Computer Science and Engineering</p>
-    <p><strong>Current Semester:</strong> 3rd Semester / 2nd Year 1st Semester</p>
-    <p><strong>Location:</strong> Dhaka, Bangladesh</p>
-  </div>
-  <br>
-  <div class="card education-info">
-    <h3>Birshreshtha Noor Mohammad Public College</h3>
-    <p><strong>Exam:</strong> Higher Secondary Certificate (HSC)</p>
-    <p><strong>Result:</strong> GPA 5.00</p>
-  </div>
-  <br>
-  <div class="card education-info">
-    <h3>Armanitola Government High School</h3>
-    <p><strong>Exam:</strong> Secondary School Certificate (SSC)</p>
-    <p><strong>Result:</strong> GPA 5.00</p>
-  </div>
-</section>
-
-<section id="skills">
-  <h2>Technical Skills</h2>
-  <div class="skill-container">
-    <div class="skill-box">
-      <h3>Languages</h3>
-      <p>C, C++, Java (OOP), HTML/CSS</p>
-    </div>
-    <div class="skill-box">
-      <h3>Core Concepts</h3>
-      <p>Object-Oriented Design, Problem Solving, Data Structures Basics</p>
-    </div>
-    <div class="skill-box">
-      <h3>Tools & Libraries</h3>
-      <p>iGraphics, Visual Studio, VS Code, Git basics</p>
-    </div>
-  </div>
-</section>
-
-<section id="projects">
-  <h2>Featured Projects</h2>
-  <div class="projects">
-    <div class="project-card featured">
-      <span class="tag">Main Project</span>
-      <h3>MetaShift</h3>
-      <p>
-        MetaShift is a 2D arcade-style side-scrolling action game developed using iGraphics
-        library in C. It features vehicle evolution, terrain adaptation, and resource management.
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="profile-img">
+        <img src="https://i.imgur.com/gR7Kagi.jpeg"
+             alt="Sheikh Tanzid Ahmed Sadi"
+             onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?background=14b8a6&color=fff&name=Sheikh+Tanzid&length=2&bold=true&size=140';">
+      </div>
+      <h2><b>Sheikh Tanzid Ahmed Sadi</b></h2>
+      <div class="typing-container">
+        <div class="typing" id="typing-element"></div>
+      </div>
+      <p class="summary">
+        Passionate about software development, object-oriented programming,
+        problem solving, and 2D game creation. Constantly evolving through real projects.
       </p>
-      <p><strong>Role:</strong> Solo Developer (game logic, mechanics, level design)</p>
-      <p><strong>Genre:</strong> 2D Arcade Action | <strong>Tech:</strong> C, C++, iGraphics, Visual Studio 2013</p>
-      <ul style="margin-top: 8px; margin-left: 18px;">
-        <li>4 progressive levels with unique enemy AI and terrain</li>
-        <li>Resource strategy (coins + fuel) to unlock mech transformation</li>
-        <li>Shooting mechanics and final boss combat</li>
-      </ul>
-      <div style="text-align: center; margin: 16px 0 8px;">
-        <a href="https://youtu.be/TsepZPAhvNM" target="_blank" rel="noopener noreferrer" class="youtube-btn">
-          ▶ Watch Gameplay on YouTube
-        </a>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn">Explore Work</a>
+        <a href="#connect" class="btn btn-outline">Contact Me</a>
       </div>
     </div>
+  </section>
 
-    <div class="project-card">
-      <h3>Portfolio Website</h3>
-      <p>
-        Fully responsive personal portfolio with modern UI, smooth scroll, and animated
-        hero section. Showcases academic background, projects, and skills.
-      </p>
-      <p><strong>Technology:</strong> HTML5, CSS3 (animations, flex/grid)</p>
-      <p><strong>Highlights:</strong> interactive design, mobile-first, gradient animations</p>
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="card">
+      <p>I am Sheikh Tanzid Ahmed Sadi, a Computer Science and Engineering student at Ahsanullah University of Science and Technology. Currently in the 3rd semester (2nd year 1st semester). I thrive on programming, OOP paradigms, algorithmic challenges, and game development. I love merging creativity with logic to build functional and fun experiences.</p>
     </div>
+  </section>
 
-    <div class="project-card">
-      <h3>Problem Solving Lab</h3>
-      <p>
-        Daily coding challenges and algorithmic practice in C++, Java. Strong focus
-        on OOP principles, recursion, and efficient problem-solving strategies.
-      </p>
-      <p><strong>Focus areas:</strong> Sorting, searching, OOP modeling, recursion</p>
+  <!-- Career Objective Section -->
+  <section id="objective">
+    <h2>Career Objective</h2>
+    <div class="card">
+      <p>To become a versatile software engineer who designs impactful solutions. I aim to strengthen my expertise in software architecture, game mechanics, and full-stack development while contributing to meaningful tech innovations.</p>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="contact">
-  <h2>Let's Connect</h2>
-  <div class="contact-wrapper">
-    <div class="contact-info">
-      <h3>Reach out directly</h3>
-      <p><span style="font-size:1.3rem;"></span> <a href="mailto:tanzid.cse.00724205101101@aust.edu">tanzid.cse.00724205101101@aust.edu</a></p>
-      <p><span style="font-size:1.3rem;"></span> <a href="tel:+8801779875316">+880 1779875316</a></p>
-      <p><span style="font-size:1.3rem;"></span> Dhaka, Bangladesh</p>
-      <p><span style="font-size:1.3rem;"></span> <a href="https://github.com/Tanzid316" target="_blank">github.com/Tanzid316</a></p>
-      <p><span style="font-size:1.3rem;"></span> <a href="https://www.linkedin.com/in/sheikh-tanzid-ahmed-sadi-7a3a21237/" target="_blank">Sheikh Tanzid Ahmed Sadi</a></p>
-      <p style="margin-top: 24px; font-style: italic; font-size: 14px; color: #9ca3af;">For any query, just talk to me.</p>
+  <!-- Education Section -->
+  <section id="education">
+    <h2>Education</h2>
+    <div class="card">
+      <h3>Ahsanullah University of Science and Technology</h3>
+      <p><strong>Degree:</strong> B.Sc. in Computer Science and Engineering</p>
+      <p><strong>Current Semester:</strong> 3rd Semester / 2nd Year 1st Semester</p>
     </div>
-
-    <div class="contact-form">
-      <h3>Send a message</h3>
-      <form action="https://formspree.io/f/xvzngeyj" method="POST">
-        <div class="form-group">
-          <label for="name">Full name *</label>
-          <input type="text" id="name" name="name" required placeholder="e.g. Tanzid Ahmed">
-        </div>
-        <div class="form-group">
-          <label for="email">Email address *</label>
-          <input type="email" id="email" name="email" required placeholder="hello@example.com">
-        </div>
-        <div class="form-group">
-          <label for="message">Message *</label>
-          <textarea id="message" name="message" required placeholder="Tell me about your opportunity, project idea, or just say hi..."></textarea>
-        </div>
-        <button type="submit" class="submit-btn">Send Message</button>
-        <div class="form-note">
-          Your message will be sent. I'll reply within 48 hours.
-        </div>
-      </form>
+    <br>
+    <div class="card">
+      <h3>Birshreshtha Noor Mohammad Public College</h3>
+      <p>HSC - GPA 5.00</p>
     </div>
-  </div>
-</section>
+    <br>
+    <div class="card">
+      <h3>Armanitola Government High School</h3>
+      <p>SSC - GPA 5.00</p>
+    </div>
+  </section>
 
-<footer>
-  <p>&copy; 2026 Sheikh Tanzid Ahmed Sadi — Built with passion & dark theme elegance</p>
-</footer>
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>Technical Skills</h2>
+    <div class="skill-container">
+      <div class="skill-box"><h3>Languages</h3><p>C, C++, Java (OOP), HTML/CSS</p></div>
+      <div class="skill-box"><h3>Core Concepts</h3><p>Object-Oriented Design, Problem Solving, Data Structures</p></div>
+      <div class="skill-box"><h3>Tools & Libraries</h3><p>iGraphics, Visual Studio, VS Code, Git basics</p></div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Featured Projects</h2>
+    <div class="projects">
+      <div class="project-card featured">
+        <span class="tag">Main Project</span>
+        <h3>MetaShift</h3>
+        <p>2D arcade-style side-scrolling action game using iGraphics library in C. Vehicle evolution, terrain adaptation, resource management.</p>
+        <p><strong>Tech:</strong> C, C++, iGraphics</p>
+        <div style="margin-top: 12px;"><a href="https://youtu.be/TsepZPAhvNM" target="_blank" class="youtube-btn">▶ Watch Gameplay</a></div>
+      </div>
+      <div class="project-card">
+        <h3>Portfolio Website</h3>
+        <p>Fully responsive personal portfolio with modern UI, smooth scroll, animated canvas background, and typing effect.</p>
+        <p><strong>Tech:</strong> HTML5, CSS3, JavaScript, Canvas API</p>
+      </div>
+      <div class="project-card">
+        <h3>Problem Solving Lab</h3>
+        <p>Daily coding challenges and algorithmic practice in C++, Java focusing on OOP, recursion, and efficient strategies.</p>
+        <p><strong>Focus:</strong> Sorting, searching, OOP modeling</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Connect Section (without Coding Profiles) -->
+  <section id="connect">
+    <h2>Get In <span>Touch</span></h2>
+    <div class="connect-container">
+      <div class="social-links">
+        <a href="https://github.com/Tanzid316" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/sheikh-tanzid-ahmed-sadi-7a3a21237/" class="social-link" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.facebook.com/sheikh.tanzid.ahmed.sadi.2025" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="mailto:tanzid.cse.00724205101101@aust.edu" class="social-link"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+    <div class="contact-wrapper" style="margin-top: 50px;">
+      <div class="contact-info">
+        <h3>Reach out directly</h3>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:tanzid.cse.00724205101101@aust.edu">tanzid.cse.00724205101101@aust.edu</a></p>
+        <p><i class="fas fa-phone-alt"></i> <a href="tel:+8801779875316">+880 1779875316</a></p>
+        <p><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</p>
+      </div>
+      <div class="contact-form">
+        <h3>Send a message</h3>
+        <form action="https://formspree.io/f/xvzngeyj" method="POST">
+          <div class="form-group"><input type="text" name="name" placeholder="Full name" required></div>
+          <div class="form-group"><input type="email" name="email" placeholder="Email address" required></div>
+          <div class="form-group"><textarea name="message" placeholder="Your message..." rows="4" required></textarea></div>
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Sheikh Tanzid Ahmed Sadi — Dynamic Portfolio with Canvas Animation & Typing Effect</p>
+  </footer>
+</div>
 
 <script>
-  (function addFloatingParticles() {
-    const hero = document.querySelector('.hero');
-    if (!hero) return;
-    for (let i = 0; i < 16; i++) {
-      const particle = document.createElement('div');
-      particle.classList.add('bg-particle');
-      const size = Math.random() * 8 + 3;
-      particle.style.width = size + 'px';
-      particle.style.height = size + 'px';
-      particle.style.left = Math.random() * 100 + '%';
-      particle.style.top = Math.random() * 100 + '%';
-      particle.style.animationDelay = Math.random() * 10 + 's';
-      particle.style.animationDuration = 6 + Math.random() * 8 + 's';
-      particle.style.background = `rgba(45, 212, 191, ${0.25 + Math.random() * 0.5})`;
-      hero.appendChild(particle);
-    }
-  })();
-</script>
+  // ========== 1. Canvas Particle Network ==========
+  const canvas = document.getElementById('bg-canvas');
+  const ctx = canvas.getContext('2d');
+  let width = window.innerWidth;
+  let height = window.innerHeight;
+  let particles = [];
+  const PARTICLE_COUNT = 80;
+  const MAX_DIST = 150;
+  const EDGE_PADDING = 50;
 
+  function resizeCanvas() {
+    width = window.innerWidth;
+    height = window.innerHeight;
+    canvas.width = width;
+    canvas.height = height;
+  }
+
+  class Particle {
+    constructor() {
+      this.x = Math.random() * width;
+      this.y = Math.random() * height;
+      this.vx = (Math.random() - 0.5) * 0.4;
+      this.vy = (Math.random() - 0.5) * 0.3;
+      this.radius = Math.random() * 2 + 1.5;
+      this.color = `rgba(45, 212, 191, ${Math.random() * 0.5 + 0.2})`;
+    }
+    update() {
+      this.x += this.vx;
+      this.y += this.vy;
+      if (this.x < -EDGE_PADDING) this.x = width + EDGE_PADDING;
+      if (this.x > width + EDGE_PADDING) this.x = -EDGE_PADDING;
+      if (this.y < -EDGE_PADDING) this.y = height + EDGE_PADDING;
+      if (this.y > height + EDGE_PADDING) this.y = -EDGE_PADDING;
+    }
+    draw() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+      ctx.fillStyle = this.color;
+      ctx.fill();
+    }
+  }
+
+  function initParticles() {
+    particles = [];
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
+      particles.push(new Particle());
+    }
+  }
+
+  function drawLines() {
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < MAX_DIST) {
+          const opacity = (1 - dist / MAX_DIST) * 0.25;
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = `rgba(45, 212, 191, ${opacity})`;
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        }
+      }
+    }
+  }
+
+  function animateBg() {
+    if (!ctx) return;
+    ctx.clearRect(0, 0, width, height);
+    ctx.fillStyle = '#03070f';
+    ctx.fillRect(0, 0, width, height);
+    particles.forEach(p => {
+      p.update();
+      p.draw();
+    });
+    drawLines();
+    requestAnimationFrame(animateBg);
+  }
+
+  window.addEventListener('resize', () => {
+    resizeCanvas();
+    initParticles();
+  });
+  resizeCanvas();
+  initParticles();
+  animateBg();
+
+  // ========== 2. Typing Animation ==========
+  const roles = [
+    "Computer Science & Engineering Student",
+    "Programmer & Game Developer",
+    "Problem Solver | OOP Enthusiast",
+    "Creative Coder"
+  ];
+  let roleIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  const typingElement = document.getElementById("typing-element");
+
+  function typeEffect() {
+    const currentRole = roles[roleIndex];
+    if (isDeleting) {
+      typingElement.textContent = currentRole.substring(0, charIndex - 1);
+      charIndex--;
+    } else {
+      typingElement.textContent = currentRole.substring(0, charIndex + 1);
+      charIndex++;
+    }
+    if (!isDeleting && charIndex === currentRole.length) {
+      isDeleting = true;
+      setTimeout(typeEffect, 1800);
+      return;
+    }
+    if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      roleIndex = (roleIndex + 1) % roles.length;
+      setTimeout(typeEffect, 300);
+      return;
+    }
+    const speed = isDeleting ? 60 : 100;
+    setTimeout(typeEffect, speed);
+  }
+  if (typingElement) typeEffect();
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      if (targetId === "#" || targetId === "") return;
+      const target = document.querySelector(targetId);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+</script>
 </body>
 </html>
